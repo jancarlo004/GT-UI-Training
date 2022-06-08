@@ -1,0 +1,40 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+import { PcfTextInput } from '@gtui/gt-ui-framework';
+import { PcfButton } from '@gtui/gt-ui-framework';
+import { PcfListView } from '@gtui/gt-ui-framework';
+
+export class CPPRatingCumulPopup {
+	cPPRatingCumulPopupCPPRatingCumulPopup_UpLink = PcfButton('#CPPRatingCumulPopup-CPPRatingCumulPopup_UpLink');
+	ratingCumulDetailsPanelSetAmountFooter = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-AmountFooter');
+	ratingCumulDetailsPanelSetAmountHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-AmountHeader');
+	ratingCumulDetailsPanelSetBACoverageCostLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-BACoverageCostLV');
+	ratingCumulDetailsPanelSetDescriptionFooter = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-DescriptionFooter');
+	ratingCumulDetailsPanelSetDescriptionHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-DescriptionHeader');
+	ratingCumulDetailsPanelSetJurisdictionHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-JurisdictionHeader');
+	ratingOverrideButtonDVOverrideRating = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-RatingOverrideButtonDV-RatingOverrideButtonDV-OverrideRating');
+	ratingOverrideButtonDVViewWorksheet = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-RatingOverrideButtonDV-RatingOverrideButtonDV-ViewWorksheet');
+	ratingCumulDetailsPanelSetvehicleLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-vehicleLV');
+	ratingCumulDetailsPanelSetAmount = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-Amount');
+	ratingCumulDetailsPanelSetBuildingNumberHeader = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-BuildingNumberHeader');
+	ratingCumulDetailsPanelSetDescription = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-Description');
+	nonLocationCostIteratorAmountFooter = PcfTextInput('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-NonLocationCostIterator-AmountFooter');
+	nonLocationCostIteratorAmountHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-NonLocationCostIterator-AmountHeader');
+	nonLocationCostIteratorDescriptionHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-NonLocationCostIterator-DescriptionHeader');
+	nonLocationCostIteratorStateHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-NonLocationCostIterator-StateHeader');
+	ratingCumulDetailsPanelSet_ViewDetail = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-_ViewDetail');
+	ratingCumulDetailsPanelSetRateCumulGLLineLevelCoverageLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-RateCumulGLLineLevelCoverageLV');
+	adjustmentsToBasePremiumCostsHOPAdjustmentsToBasePremiumLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-AdjustmentsToBasePremiumCosts-HOPAdjustmentsToBasePremiumLV');
+	basePremiumCostsHOPBasePremiumLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-BasePremiumCosts-HOPBasePremiumLV');
+	modifierCostsHOPModifierCostLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-ModifierCosts-HOPModifierCostLV');
+	otherPremiumCostsHOPOtherPremiumLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-OtherPremiumCosts-HOPOtherPremiumLV');
+	totalCostHOPTotalCostLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-TotalCost-HOPTotalCostLV');
+	iMRatingCumulPanelSet_ListPaging = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-IMRatingCumulPanelSet-_ListPaging');
+	iMRatingCumulPanelSetpartPremiumHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-IMRatingCumulPanelSet-partPremiumHeader');
+	iMRatingCumulPanelSetpartnameHeader = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-IMRatingCumulPanelSet-partnameHeader');
+	iMRatingCumulPanelSet_tbcompactviewButton = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-IMRatingCumulPanelSet_tb-compactviewButton');
+	iMRatingCumulPanelSet_tbextendedviewButton = PcfButton('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-IMRatingCumulPanelSet_tb-extendedviewButton');
+	ratingCumulDetailsPanelSetsubTotalLV = PcfListView('#CPPRatingCumulPopup-RatingCumulDetailsPanelSet-subTotalLV');
+	cPPRatingCumulPopup_Paging = PcfButton('#CPPRatingCumulPopup-_Paging');
+	cPPRatingCumulPopup__crumb__ = PcfComponent('#CPPRatingCumulPopup-__crumb__');
+	cPPRatingCumulPopup_msgs = PcfButton('#CPPRatingCumulPopup-_msgs');
+}

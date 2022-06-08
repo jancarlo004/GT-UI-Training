@@ -1,0 +1,15 @@
+.idea/
+.vscode/
+.gradle/
+.settings/
+node_modules/
+reports/
+gradlecache/
+.classpath
+.project
+**/target/
+**/build/
+**/out/
+**/bin/
+
+

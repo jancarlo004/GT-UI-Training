@@ -1,0 +1,9 @@
+{
+  "PC_URL": "http://3.17.237.109:8180/pc/PolicyCenter.do",
+  "CC_URL": "http://3.17.237.109:8080/cc/ClaimCenter.do",
+  "BC_URL": "http://3.17.237.109:8580/bc/BillingCenter.do",
+  "CM_URL": "<Please enter ContactManager app URL>",
+  "feature_location_pattern": "**/behaviortests/features/**/*.feature",
+  "glue_location_pattern": "**/behaviortests/steps/**/*.js",
+  "allow_insecure_app_urls": "true"
+}
