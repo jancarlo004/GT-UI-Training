@@ -7,6 +7,7 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
+import { PcfButton, PcfCheckBox, PcfComponent } from "@gtui/gt-ui-framework";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -68,4 +69,15 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
+    async test(){
+        let collision = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType-0-item-0-item");
+        let coverage = collision.component.child();
+        let covType = coverage.component.parent();
+
+        await t.hover(covType);
+        await t.hover(coverage);
+        await t.click(collision);
+    }
 }
+   
+ 
