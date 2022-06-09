@@ -4,6 +4,9 @@ import { t } from "testcafe";
 
 export class Kevpages {
 
+// 
+offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#SubmissionWizard-OfferingScreen-OfferingSelection');
+
 // Account creation
     accountTab = PcfComponent('#TabBar-AccountTab');
     newAccount = PcfButton('#TabBar-AccountTab-AccountTab_NewAccount');
@@ -84,6 +87,8 @@ export class Kevpages {
     issuePolicyButton = PcfButton('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue');
     // Verify bound
     policyBound = PcfComponent('#JobComplete-JobWizardInfoBar-JobLabel');
+    // Policy find
+    policyNumber = PcfComponent('#JobComplete-JobWizardInfoBar-PolicyNumber');
 
 // New Submission In-Land Marine Policy
     orgType = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-SubmissionWizard_PolicyInfoScreen-SubmissionWizard_PolicyInfoDV-AccountInfoInputSet-OrganizationType');
@@ -122,6 +127,9 @@ export class Kevpages {
     limit = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMPartScreen-IMARPanelSet-IMARItemDV-0-ARLlimitCell');
     
 
+// Claim
+    newClaim = PcfComponent('#TabBar-ClaimTab');
+    newClaim2 = PcfComponent('#TabBar-ClaimTab-ClaimTab_FNOLWizard');
 
 
 

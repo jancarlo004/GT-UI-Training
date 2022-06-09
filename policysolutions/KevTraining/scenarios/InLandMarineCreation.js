@@ -1,6 +1,8 @@
 'use strict'
 import { Kevpages } from "../pages/account/Kevpages";
 import { t } from "testcafe"
+// import { world } from "@cucumber/cucumber";
+import  world  from "../../KevTraining/utils/world";
 
 const kevPages = new Kevpages();
 
@@ -41,22 +43,23 @@ export class InLandMarineCreation {
         await kevPages.bindOptions.click();
         await kevPages.issuePolicyButton.click();
         await t.wait(3000);
-
+        world.policyNumber = await kevPages.policyNumber.component.find('.gw-infoValue').innerText;
+        console.log("result:" + world.policyNumber);
 
     }
 
-    //  async verifyInLandMarineIsBound(){
-    //     let policyBound = "Submission (Bound)";
-    //     let policyResult = await kevPages.policyBound.component.innerText;
-    //     console.log("result" + policyResult);
-    //     await t.expect(policyResult).contains(policyBound);
+     async verifyInLandMarineIsBound(){
+        let policyBound = "Submission (Bound)";
+        let policyResult = await kevPages.policyBound.component.innerText;
+        console.log("result" + policyResult);
+        await t.expect(policyResult).contains(policyBound);
 
+    }
 
-    //}
-
-    async InlandMarineClaimCreated(){
-        
-
+     async InlandMarineClaimCreated(){
+        !await kevPages.newClaim.component.hasClass('gw-hasOpenSubMenu') && await t.click(kevPages.newClaim.component.find('div.gw-action--expand-button'));
+        await kevPages.newClaim2.click();
+        await t.wait(3000);
 
     }
 
