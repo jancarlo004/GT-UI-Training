@@ -16,12 +16,13 @@ export class DriverScreen {
     numberOfViolationsPolicyLevel = PcfSelectInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-1-PolicyContactRolePanelSet-PolicyDriverNumberOfViolations");
     numberOfViolationsAccountLevel = PcfSelectInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-1-PolicyContactRolePanelSet-DriverNumberOfViolations");
     dateOfBirth = PcfTextInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-DateOfBirth");
-    
+   
     async SelectExistingDriver(){
+        let existingDriver = this.addExstingDriver.component.find('.gw-subMenu').find('.gw-label').withText("Jan Magsino");
         await t 
             .click(this.addDriver.component)
             .hover(this.addExstingDriver.component)
-            .click(this.existingDriver.component);
+            .click(existingDriver);
     }
 }
 
