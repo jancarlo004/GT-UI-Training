@@ -17,4 +17,5 @@ export class PAClaimCreations{
     updateButton = PcfButton("#FNOLVehicleIncidentPopup-FNOLVehicleIncidentScreen-Update");
     finishButton = PcfButton("#FNOLWizard-Finish");
     claimCreated = PcfComponent("#NewClaimSaved-NewClaimSavedScreen-ttlBar");
+    ccf
 }
