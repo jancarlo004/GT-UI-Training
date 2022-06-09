@@ -11,8 +11,5 @@ Then(/^a billing event is created$/, async function() {
   
 });
 
-var x = ["sasha","Lexi","Mia"]
-for(var i = 0; i < 3;i++) { 
- console.log(x[i])
 
-}
+
