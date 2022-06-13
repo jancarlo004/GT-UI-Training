@@ -128,9 +128,17 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     
 
 // Claim
-    newClaim = PcfComponent('#TabBar-ClaimTab');
-    newClaim2 = PcfComponent('#TabBar-ClaimTab-ClaimTab_FNOLWizard');
+    claimTabBar = PcfComponent('#TabBar-ClaimTab');
+    newClaim = PcfComponent('#TabBar-ClaimTab-ClaimTab_FNOLWizard');
+    claimPolicyNum = PcfTextInput('#FNOLWizard-FNOLWizard_FindPolicyScreen-FNOLWizardFindPolicyPanelSet-policyNumber');
+    claimSearchButton = PcfButton('#FNOLWizard-FNOLWizard_FindPolicyScreen-FNOLWizardFindPolicyPanelSet-Search');
+    claimLossDate = PcfTextInput('#FNOLWizard-FNOLWizard_FindPolicyScreen-FNOLWizardFindPolicyPanelSet-Claim_LossDate');
+    claimNextButton = PcfButton('#FNOLWizard-Next');
+    claimName = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-PanelRow-BasicInfoDetailViewPanelDV-ReportedBy_Name');
+    claimRelationToInsured = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-PanelRow-BasicInfoDetailViewPanelDV-Claim_ReportedByType');
+    claimLossCause = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-LossDetailsPanel-FNOLWizard_NewLossDetailsPanelSet-Claim_LossCause');
+    claimState = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-LossDetailsPanel-FNOLWizard_NewLossDetailsPanelSet-CCAddressInputSet-globalAddressContainer-globalAddress-GlobalAddressInputSet-State');
+    claimFinishButton = PcfButton('#FNOLWizard-Finish');
 
-
-
+    claimSaved = PcfComponent('#NewClaimSaved-NewClaimSavedScreen-ttlBar');
 }   

@@ -57,14 +57,27 @@ export class InLandMarineCreation {
     }
 
      async InlandMarineClaimCreated(){
-        !await kevPages.newClaim.component.hasClass('gw-hasOpenSubMenu') && await t.click(kevPages.newClaim.component.find('div.gw-action--expand-button'));
-        await kevPages.newClaim2.click();
+        !await kevPages.claimTabBar.component.hasClass('gw-hasOpenSubMenu') && await t.click(kevPages.claimTabBar.component.find('div.gw-action--expand-button'));
+        await kevPages.newClaim.click();
+        await kevPages.claimPolicyNum.setValue(world.policyNumber);
+        await kevPages.claimSearchButton.click();
+        await kevPages.claimLossDate.setValue("06/13/2022");
+        await kevPages.claimNextButton.click();
+        await kevPages.claimName.selectOptionByLabel("Máel Strom");
+        await kevPages.claimNextButton.click();
+        await kevPages.claimLossCause.selectOptionByLabel("Malicious mischief and vandalism");
+        await kevPages.claimState.selectOptionByLabel("Arizona");
+        await kevPages.claimNextButton.click();
+        await kevPages.claimFinishButton.click();
         await t.wait(3000);
 
     }
 
     async verifyInlandMarineClaimIsCreated(){
-
+        let claimSaved = "New Claim Saved";
+        let claimResult = await kevPages.claimSaved.component.innerText;
+        console.log("Result: " + claimResult);
+        await t.expect(claimResult).contains(claimSaved);
 
 
     }

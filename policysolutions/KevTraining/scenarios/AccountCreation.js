@@ -10,7 +10,7 @@ export class AccountCreation{
         await t.click(kevPages.accountTab.component.find('div.gw-action--expand-button'));
         await kevPages.newAccount.click();
         await kevPages.firstName.setValue("Máel");
-        await kevPages.lastName.setValue("Storm");
+        await kevPages.lastName.setValue("Strom");
         await kevPages.searchButton.click();
         await kevPages.createNewAccountButton.click();
         await kevPages.person.click();
