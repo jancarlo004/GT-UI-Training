@@ -7,7 +7,7 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
-import { PcfButton, PcfCheckBox, PcfComponent } from "@gtui/gt-ui-framework";
+import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -59,25 +59,13 @@ export class PersonalAutoPolicyCreation{
 
         await quoteScreen.bindOptionsButton.click();
         await quoteScreen.issuePolicyButton.click();
-        await quoteScreen.viewPolicy.click();
-        await t.wait(2000);
-        world.policyNumber = await quoteScreen.policyNum.component.innerText;
+        world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
+       
     }
-
     async verifypolicyIssued(){
         let policyBound = "Submission (Bound)";
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
-    async test(){
-        let collision = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType-0-item-0-item");
-        let coverage = collision.component.child();
-        let covType = coverage.component.parent();
-
-        await t.hover(covType);
-        await t.hover(coverage);
-        await t.click(collision);
-    }
 }
-   
- 
+

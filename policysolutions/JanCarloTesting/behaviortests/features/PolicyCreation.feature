@@ -15,7 +15,7 @@ Scenario: HO Policy Creation
     Given I create a HomeOwners Policy
     Then HomeOwners Policy is created 
 
-@HoPolicyCreation
+@InlandMarinePolicyCreation
 Scenario: Inland-Marine Policy Creation
     Given I create a In-Land Marine Policy
     Then In-Land Marine Policy is created           

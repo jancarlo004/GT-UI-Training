@@ -6,6 +6,7 @@ import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { AccountMenuActions } from "../../../pages/navigation/menuActions/AccountMenuActions";
 import { NewSubmission } from "../../../../ignite/previousGeneratedOutput/classFiles/policysolutions/pages/other/NewSubmission";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
+import world from "../../util/world";
 
 const accountMenuActions = new AccountMenuActions();
 const qualificationScreen = new QualificationScreen();
@@ -51,6 +52,7 @@ export class HomeOwnersPolicyCreation{
 
         await newSubmissionWizard.bindOptionsHome.click();
         await newSubmissionWizard.issueHomePolicy.click();
+        world.policyNumber = await newSubmissionWizard.policyNumber.component.find('.gw-infoValue').innerText;
     }
 
     async verifyHomePolicyCreation(){

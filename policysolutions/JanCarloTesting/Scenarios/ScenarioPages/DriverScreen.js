@@ -18,11 +18,11 @@ export class DriverScreen {
     dateOfBirth = PcfTextInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-DateOfBirth");
    
     async SelectExistingDriver(){
-        let existingDriver = this.addExstingDriver.component.find('.gw-subMenu').find('.gw-label').withText("Jan Magsino");
+        // let existingDriver = this.addExstingDriver.component.find('.gw-subMenu').find('.gw-label').withText("Jan Magsino");
         await t 
             .click(this.addDriver.component)
             .hover(this.addExstingDriver.component)
-            .click(existingDriver);
+            .click(this.existingDriver.component);
     }
 }
 
