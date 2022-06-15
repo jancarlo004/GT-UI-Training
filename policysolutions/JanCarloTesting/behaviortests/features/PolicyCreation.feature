@@ -8,7 +8,9 @@ Scenario: Policy Creation
     Given I create a Personal Auto Policy
     # Then Personal Auto Policy is created
     When I create personal auto claim
-    Then Claim was created
+    # Then Claim was created
+    And I create exposure and reserves
+    Then reserve is created
 
 @HomePolicy
 Scenario: HO Policy Creation

@@ -20,5 +20,6 @@ export class InlandMarinePages{
     bindOption = PcfButton("#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions");
     issuePolicyButton = PcfButton("#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue");
     policyNumber = PcfComponent("#JobComplete-JobWizardInfoBar-PolicyNumber");
+    lobListView = PcfComponent("#NewSubmission-NewSubmissionScreen-ProductOffersDV-ProductSelectionLV");
 
 }

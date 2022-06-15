@@ -8,6 +8,7 @@ import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
 import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
+import { CoverageScreen } from "../ScenarioPages/CoverageScreen";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -23,7 +24,7 @@ export class PersonalAutoPolicyCreation{
 
         await accountMenuActions.accountFileAccountFileMenuActions.click();
         await accountMenuActions.accountFileMenuActions_CreateAccountFileMenuActions_NewSubmission.click();
-        await newSubmission.newSubmissionNewSubmissionScreenProductOffersDVProductSelectionLV.clickOnCell(6,0);
+        await this.selectAutoLOB("Personal Auto");
         await t.wait(2000);
 
         await offeringScreen.offeringSelection.selectOptionByLabel("Basic Program");
@@ -62,6 +63,13 @@ export class PersonalAutoPolicyCreation{
         world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
        
     }
+
+    async selectAutoLOB(lob){
+        let personalAutoLabel = driverScreen.lobListView.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = personalAutoLabel.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
+    }
+
     async verifypolicyIssued(){
         let policyBound = "Submission (Bound)";
         

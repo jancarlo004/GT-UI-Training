@@ -10,7 +10,7 @@ export class InLandMarinePolicyCreation {
 
         await inlandMarinePages.actionsMenuButton.click();
         await inlandMarinePages.newSubmission.click();
-        await inlandMarinePages.newSubmissionLOB.clickOnCell(4,0);
+        await this.inlandMarinePolicyCreation("Inland Marine");
         await inlandMarinePages.organizationType.selectFirstOptionWithValue();
         await inlandMarinePages.nextButton.click();
         await inlandMarinePages.addCoverageButton.click();
@@ -29,6 +29,12 @@ export class InLandMarinePolicyCreation {
         await inlandMarinePages.bindOption.click();
         await inlandMarinePages.issuePolicyButton.click();
         world.policyNumber = await inlandMarinePages.policyNumber.component.find('.gw-infoValue').innerText;
+    }
+
+    async selectInlandMarineLOB(lob){
+        let personalAutoLabel = inlandMarinePages.lobListView.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = personalAutoLabel.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
     }
 
     async verifyInlanMarinePolicyCreated(){

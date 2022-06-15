@@ -33,3 +33,10 @@ When(/^I create personal auto claim$/, async function(){
 Then(/^Claim was created$/, async function(){
     await paClaimCreation.verifyClaimIsCreated();
 });
+
+When(/^I create exposure and reserves$/, async function(){
+    await paClaimCreation.exposureAndReserveCreation();
+});
+Then(/^reserve is created$/, async function(){
+    await paClaimCreation.verifyReserveIsCreated();
+});
