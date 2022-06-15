@@ -13,7 +13,7 @@ export class AccountCreation{
         await t.click(kevPages.accountTab.component.find('div.gw-action--expand-button'));
         await kevPages.newAccount.click();
         await kevPages.firstName.setValue("Máel");
-        await kevPages.lastName.setValue("Coluim");
+        await kevPages.lastName.setValue("sada");
         await kevPages.searchButton.click();
         if(await autoPolicyPages.searchResultLV.rowCount() == 0){
             await kevPages.createNewAccountButton.click();
