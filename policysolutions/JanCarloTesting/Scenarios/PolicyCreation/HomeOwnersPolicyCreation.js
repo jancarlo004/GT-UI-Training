@@ -6,6 +6,7 @@ import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { AccountMenuActions } from "../../../pages/navigation/menuActions/AccountMenuActions";
 import { NewSubmission } from "../../../../ignite/previousGeneratedOutput/classFiles/policysolutions/pages/other/NewSubmission";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
+import world from "../../util/world";
 
 const accountMenuActions = new AccountMenuActions();
 const qualificationScreen = new QualificationScreen();
@@ -20,7 +21,7 @@ export class HomeOwnersPolicyCreation{
 
         await accountMenuActions.accountFileAccountFileMenuActions.click();
         await accountMenuActions.accountFileMenuActions_CreateAccountFileMenuActions_NewSubmission.click();
-        await newSubmission.newSubmissionNewSubmissionScreenProductOffersDVProductSelectionLV.clickOnCell(3,0);
+        await this.selectHomeLOB("Homeowners")
         await t.wait(2000);
 
         await qualificationScreen.policytype.selectOptionByLabel("Dwelling");
@@ -51,6 +52,13 @@ export class HomeOwnersPolicyCreation{
 
         await newSubmissionWizard.bindOptionsHome.click();
         await newSubmissionWizard.issueHomePolicy.click();
+        world.policyNumber = await newSubmissionWizard.policyNumber.component.find('.gw-infoValue').innerText;
+    }
+
+    async selectHomeLOB(lob){
+        let personalAutoLabel = coverageScreen.lobListView.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = personalAutoLabel.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
     }
 
     async verifyHomePolicyCreation(){
