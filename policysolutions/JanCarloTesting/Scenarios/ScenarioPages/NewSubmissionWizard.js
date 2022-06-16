@@ -1,5 +1,5 @@
 'use strict'
-import { PcfButton } from "@gtui/gt-ui-framework"
+import { PcfButton, PcfComponent } from "@gtui/gt-ui-framework"
 
 export class NewSubmissionWizard {
     newSubmissionNextButton = PcfButton("#SubmissionWizard-Next");
@@ -8,4 +8,5 @@ export class NewSubmissionWizard {
 
     bindOptionsHome = PcfButton("#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions");
     issueHomePolicy = PcfButton("#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue");
+    policyNumber = PcfComponent("#JobComplete-JobWizardInfoBar-PolicyNumber");
 }   

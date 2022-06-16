@@ -7,7 +7,8 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
-import { PcfButton, PcfCheckBox, PcfComponent } from "@gtui/gt-ui-framework";
+import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
+import { CoverageScreen } from "../ScenarioPages/CoverageScreen";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -23,7 +24,7 @@ export class PersonalAutoPolicyCreation{
 
         await accountMenuActions.accountFileAccountFileMenuActions.click();
         await accountMenuActions.accountFileMenuActions_CreateAccountFileMenuActions_NewSubmission.click();
-        await newSubmission.newSubmissionNewSubmissionScreenProductOffersDVProductSelectionLV.clickOnCell(6,0);
+        await this.selectAutoLOB("Personal Auto");
         await t.wait(2000);
 
         await offeringScreen.offeringSelection.selectOptionByLabel("Basic Program");
@@ -34,6 +35,12 @@ export class PersonalAutoPolicyCreation{
         await t.wait(1000);
         await driverScreen.SelectExistingDriver();
         await t.wait(2000);
+        console.log("Test");
+        let drivers = [];
+        for(let i=0; i< await driverScreen.driverListView.rowCount(); i++){
+             drivers[i] = await driverScreen.driverListView.getTextFromCellByColumnName(i,"Name");
+             console.log(drivers[i]);
+         }
         await driverScreen.dateOfBirth.setValue("08/04/1990");
         await driverScreen.licenseNumber.setValue("D05129922");
         await driverScreen.licenseState.selectOptionByLabel("Arizona");
@@ -59,9 +66,14 @@ export class PersonalAutoPolicyCreation{
 
         await quoteScreen.bindOptionsButton.click();
         await quoteScreen.issuePolicyButton.click();
-        await quoteScreen.viewPolicy.click();
-        await t.wait(2000);
-        world.policyNumber = await quoteScreen.policyNum.component.innerText;
+        world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
+       
+    }
+
+    async selectAutoLOB(lob){
+        let personalAutoLabel = driverScreen.lobListView.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = personalAutoLabel.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
     }
 
     async verifypolicyIssued(){
@@ -69,15 +81,5 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
-    async test(){
-        let collision = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType-0-item-0-item");
-        let coverage = collision.component.child();
-        let covType = coverage.component.parent();
-
-        await t.hover(covType);
-        await t.hover(coverage);
-        await t.click(collision);
-    }
 }
-   
- 
+
