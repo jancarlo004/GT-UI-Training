@@ -31,9 +31,22 @@ export class PAClaimCreations{
     editReserveListView = PcfListView("#NewReserveSet-NewReserveSetScreen-ReservesSummaryDV-EditableReservesLV");
     saveButton = PcfButton("#NewReserveSet-NewReserveSetScreen-Update");
     financialListView = PcfListView("#ClaimFinancialsTransactions-ClaimFinancialsTransactionsScreen-TransactionsLV");
-
+    serviceRequest = PcfButton("#Claim-ClaimMenuActions-ClaimNewOtherMenuItemSet-ClaimMenuActions_NewOther-ClaimMenuActions_NewServiceRequest");
+    addServiceListview = PcfComponent("#SelectServicesPopup-SpecialistServiceTreeLV");
+    addServiceButton = PcfButton("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-InstructionServicesLV_tb-AddMultipleServices");
+    okButton = PcfButton("#SelectServicesPopup-UpdateServiceRequestServices");
+    requestType = PcfSelectInput("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-Kind");
+    addName = PcfButton("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-Specialist-SpecialistMenuIcon");
+    autoBodyrepairShop = PcfComponent("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-Specialist-ClaimNewServiceRequestSpecialistPickerMenuItemSet-NewVendor-NewAutoRepairShop");
+    newVendor = PcfComponent("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-Specialist-ClaimNewServiceRequestSpecialistPickerMenuItemSet-NewVendor");
+    serviceAddress = PcfSelectInput("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-NewServiceRequestInstructionInputSet-ServiceAddressPicker");
+    addMenuIcon = PcfButton("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-NewServiceRequestInstructionInputSet-CustomerContact-CustomerContactMenuIcon");
     async getCollisionExposure(){
         await t.hover(this.coverageType.component).hover(this.cLabel.component).click(this.collision.component);
+    }
+
+    async createAutoBodyRepairShopButton(){
+        await t.hover(newVendor.component).click(autoBodyrepairShop.component);
     }
 
 

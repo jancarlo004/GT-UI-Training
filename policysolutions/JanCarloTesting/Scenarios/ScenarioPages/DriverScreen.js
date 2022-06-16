@@ -1,5 +1,5 @@
 'use strict'
-import { PcfButton,PcfComponent,PcfSelectInput,PcfTextInput } from "@gtui/gt-ui-framework"
+import { PcfButton,PcfComponent,PcfListView,PcfSelectInput,PcfTextInput } from "@gtui/gt-ui-framework"
 import { t } from "testcafe";
 
 export class DriverScreen {
@@ -17,6 +17,7 @@ export class DriverScreen {
     numberOfViolationsAccountLevel = PcfSelectInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-1-PolicyContactRolePanelSet-DriverNumberOfViolations");
     dateOfBirth = PcfTextInput("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-DateOfBirth");
     lobListView = PcfComponent("#NewSubmission-NewSubmissionScreen-ProductOffersDV-ProductSelectionLV");
+    driverListView = PcfListView("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV");
     async SelectExistingDriver(){
         // let existingDriver = this.addExstingDriver.component.find('.gw-subMenu').find('.gw-label').withText("Jan Magsino");
         await t 

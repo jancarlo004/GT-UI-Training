@@ -29,6 +29,7 @@ export class PAClaimCreation{
         await paClaimCreation.updateButton.click();
         await paClaimCreation.nextButton.click();
         await paClaimCreation.finishButton.click();
+        await paClaimCreation.claimSaveLink.click();
     }
 
     async verifyClaimIsCreated(){
@@ -36,7 +37,6 @@ export class PAClaimCreation{
         await t.expect(await paClaimCreation.claimCreated.component.innerText).contains(claimCreated);
     }
     async exposureAndReserveCreation(){
-        await paClaimCreation.claimSaveLink.click();
         await paClaimCreation.claimMenuActions.click();
         await paClaimCreation.getCollisionExposure();
 
@@ -50,23 +50,49 @@ export class PAClaimCreation{
         await paClaimCreation.reserve.click();
         await t.wait(1000);
 
-        let exposureListView = await paClaimCreation.editReserveListView.rowCount() - 1;
-        let findCostTypeField = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListView, "Cost Type");
+        let exposureListViewIndex = await paClaimCreation.editReserveListView.rowCount() - 1;
+        let findCostTypeField = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListViewIndex, "Cost Type");
         let costType = PcfSelectInput(findCostTypeField);
         await costType.selectOptionByLabel("Claim Cost");
 
-        let findCostCategory = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListView, "Cost Category");
+        let findCostCategory = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListViewIndex, "Cost Category");
         let costCategory = PcfSelectInput(findCostCategory);
         await costCategory.selectOptionByLabel("Glass");
 
-        let findNewAvailableReserve = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListView, "New Available Reserves");
+        let findNewAvailableReserve = await paClaimCreation.editReserveListView.getCellByColumnName(exposureListViewIndex, "New Available Reserves");
         let newAvailablereserve = PcfTextInput(findNewAvailableReserve);
         await newAvailablereserve.setValue("1000");
 
         await paClaimCreation.saveButton.click();
+        await t.wait(1000);
 
     }
     async verifyReserveIsCreated(){
-        
+       await t.expect(await paClaimCreation.financialListView.rowCount()).gt(0);
+   
     }
+
+    async createService(){
+        await paClaimCreation.claimMenuActions.click();
+        await paClaimCreation.serviceRequest.click();
+        await paClaimCreation.addServiceButton.click();
+        await t.wait(2000);
+        let alternativeAccoumodation = paClaimCreation.addServiceListview.component.find('td[id$=-ServiceLeaf_Cell]').withExactText("Alternative accommodation");
+        let findCheckBoxAlternative = alternativeAccoumodation.find('div.gw-IteratorEntryCheckBoxWidget[id$=-_Checkbox]');
+        await t.click(findCheckBoxAlternative);
+
+        // let adjudicateClaim = paClaimCreation.addServiceListview.component.find('td[id$=-ServiceLeaf_Cell]').withExactText("Adjudicate claim");
+        // let findCheckBoxAdjudicate = adjudicateClaim.find('div.gw-IteratorEntryCheckBoxWidget[id$=-_Checkbox]');
+        // await t.click(findCheckBoxAdjudicate);
+
+        await paClaimCreation.okButton.click();
+        await t.wait(1000);
+        await paClaimCreation.requestType.selectOptionByLabel("Quote");
+        await paClaimCreation.serviceAddress.selectFirstOptionWithValue();
+        await t.pressKey('tab');
+        await paClaimCreation.addName.click();
+        await paClaimCreation.createAutoBodyRepairShopButton();
+        await t.wait(2000);
+
+    }  
 }

@@ -35,6 +35,12 @@ export class PersonalAutoPolicyCreation{
         await t.wait(1000);
         await driverScreen.SelectExistingDriver();
         await t.wait(2000);
+        console.log("Test");
+        let drivers = [];
+        for(let i=0; i< await driverScreen.driverListView.rowCount(); i++){
+             drivers[i] = await driverScreen.driverListView.getTextFromCellByColumnName(i,"Name");
+             console.log(drivers[i]);
+         }
         await driverScreen.dateOfBirth.setValue("08/04/1990");
         await driverScreen.licenseNumber.setValue("D05129922");
         await driverScreen.licenseState.selectOptionByLabel("Arizona");

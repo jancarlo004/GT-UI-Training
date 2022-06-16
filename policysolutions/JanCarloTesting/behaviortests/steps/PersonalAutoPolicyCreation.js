@@ -40,3 +40,7 @@ When(/^I create exposure and reserves$/, async function(){
 Then(/^reserve is created$/, async function(){
     await paClaimCreation.verifyReserveIsCreated();
 });
+
+When(/^I create a service$/, async function(){
+    await paClaimCreation.createService();
+});
