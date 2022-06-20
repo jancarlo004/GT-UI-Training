@@ -14,7 +14,7 @@ export class NewPersonAccountScreen {
         this.organization = PcfTextInput("#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-Producer");
         this.producerCode = PcfComponent("#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-ProducerCode");
         this.updateButton = PcfButton("#CreateAccount-CreateAccountScreen-Update");
-     
+        this.accountName = PcfComponent("#AccountFile_Summary-AccountSummaryDashboard-AccountDetailsDetailViewTile-AccountDetailsDetailViewTile_DV-AccountHolder");
     }
 
     async selectProducerCode(valueToSelect) {
