@@ -3,6 +3,7 @@ import { NewAccount } from "../../../pages/account/NewAccount";
 import { NewPersonAccountScreen } from "../../../pages/other/NewPersonAccountScreen";
 import { AccountPageScreen} from "../ScenarioPages/AccountPageScreen";
 import { t } from "testcafe";
+import world from "../../util/world";
 
 const accountTab = new AccountTabBar();
 const newaccount = new NewAccount();
@@ -16,13 +17,14 @@ export class AccountCreation{
     await accountTab.tabBarAccountTab.click();
     !await accountTab.tabBarAccountTab.component.hasClass('gw-hasOpenSubMenu') && await t.click(accountTab.tabBarAccountTab.component.find('div.gw-action--expand-button'));
     await accountTab.accountTabAccountTab_NewAccount.click();
-    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("Shean");
-    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("Gibbons");
+    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("Don Dominic");
+    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("Campilla");
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVSearchAndResetInputSetSearchLinksInputSetSearch.click();
     await t.wait(1000);
 
         if(await accountPageScreen.searchResults.rowCount() != 0){
             await accountPageScreen.searchResults.clickOnCell(0,1);
+            world.accountName = await newPersonAccountScreen.accountName.component.innerText;
         }else{
             await accountPageScreen.createNewAccountButton.click();
             await accountPageScreen.createNewPersonButton.click();
@@ -36,6 +38,9 @@ export class AccountCreation{
             await t.pressKey('tab');
             await newPersonAccountScreen.selectProducerCode("INT-3 Internal Producer Code - 3");
             await newPersonAccountScreen.updateButton.click();
+            await t.wait(1000);
+            world.accountName = await newPersonAccountScreen.accountName.component.innerText;
+
         }
     }
 }

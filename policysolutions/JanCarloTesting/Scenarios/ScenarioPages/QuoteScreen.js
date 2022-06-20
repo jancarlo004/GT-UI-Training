@@ -8,5 +8,6 @@ export class QuoteScreen{
     policyStatusHome = PcfComponent("#JobComplete-JobWizardInfoBar-JobLabel");
     viewPolicy = PcfComponent("#JobComplete-JobCompleteScreen-JobCompleteDV-ViewPolicy");
     policyNum = PcfComponent("#PolicyFile_Summary-PolicyOverviewDashboard-PolicyDetailsDetailViewTile-PolicyDetailsDetailViewTile_DV-PolicyNumber");
+    policyNumberLabel = PcfComponent("#JobComplete-JobWizardInfoBar-PolicyNumber");
     
 }

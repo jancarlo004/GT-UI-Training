@@ -7,6 +7,9 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
+import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
+import { CoverageScreen } from "../ScenarioPages/CoverageScreen";
+import { takeWhile } from "lodash";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -22,7 +25,7 @@ export class PersonalAutoPolicyCreation{
 
         await accountMenuActions.accountFileAccountFileMenuActions.click();
         await accountMenuActions.accountFileMenuActions_CreateAccountFileMenuActions_NewSubmission.click();
-        await newSubmission.newSubmissionNewSubmissionScreenProductOffersDVProductSelectionLV.clickOnCell(6,0);
+        await this.selectAutoLOB("Personal Auto");
         await t.wait(2000);
 
         await offeringScreen.offeringSelection.selectOptionByLabel("Basic Program");
@@ -33,34 +36,23 @@ export class PersonalAutoPolicyCreation{
         await t.wait(1000);
         await driverScreen.SelectExistingDriver();
         await t.wait(2000);
-        await driverScreen.dateOfBirth.setValue("08/04/1990");
-        await driverScreen.licenseNumber.setValue("D05129922");
-        await driverScreen.licenseState.selectOptionByLabel("Arizona");
-        await driverScreen.rolesTab.click();
-        await t.wait(2000);
-        await driverScreen.licenseYear.setValue("2010");
-        await t.wait(1000);
-        await driverScreen.numberOfAccidentPolicyLevel.selectOptionByLabel("0");
-        await driverScreen.numberOfAccidentAccountLevel.selectOptionByLabel("0");
-        await driverScreen.numberOfViolationsPolicyLevel.selectOptionByLabel("0");
-        await driverScreen.numberOfViolationsAccountLevel.selectOptionByLabel("0");
+        await driverScreen.createNewDriver();
         await newSubmissionWizard.newSubmissionNextButton.click();
-
-        await vehicleScreen.createVehicleButton.click();
-        await vehicleScreen.vehicleVin.setValue("5TBJT32166S477646");
-        await t.pressKey('tab');
-        await vehicleScreen.costNew.setValue("10000");
-        await vehicleScreen.licenseState.selectOptionByLabel("Arizona");
-        await vehicleScreen.vehicleDriverAssignment.click();
-        await vehicleScreen.existingDriver.click();
+        await t.wait(2000);
+        await this.createNewVehicle();
         await newSubmissionWizard.newSubmissionNextButton.click();
         await newSubmissionWizard.quoteButton.click();
 
         await quoteScreen.bindOptionsButton.click();
         await quoteScreen.issuePolicyButton.click();
-        await quoteScreen.viewPolicy.click();
-        await t.wait(2000);
-        world.policyNumber = await quoteScreen.policyNum.component.innerText;
+        world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
+       
+    }
+
+    async selectAutoLOB(lob){
+        let personalAutoLabel = driverScreen.lobListView.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = personalAutoLabel.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
     }
 
     async verifypolicyIssued(){
@@ -68,4 +60,19 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
+    async createNewVehicle(){
+        
+        for(let i=0; i< world.drivers.length -1; i++){ 
+            await vehicleScreen.createVehicleButton.click();
+            await vehicleScreen.vehicleVin.setValue(world.newVehicleVin[i]);
+            await vehicleScreen.costNew.setValue(world.costNew[i]);
+            await vehicleScreen.licenseState.selectOptionByLabel(world.licenseStateInVehicle[i]);
+            await vehicleScreen.vehicleDriverAssignment.click();
+            let vehicleAssignedToDrivers =  vehicleScreen.vehicleDriverAssignment.component.find('.gw-subMenu').find('.gw-label').withText(world.drivers[i]);
+            console.log(vehicleAssignedToDrivers);
+            await t.click(vehicleAssignedToDrivers);
+
+        }
+    }
 }
+
