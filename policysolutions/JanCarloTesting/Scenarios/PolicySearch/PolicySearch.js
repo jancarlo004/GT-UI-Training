@@ -19,7 +19,7 @@ export class PolicySearch{
         await t.expect(await policySearchTab.policySearchListView.rowCount()).gt(0);
     }
 
-    async selectLob(){
+    async selectExistingDriver(){
         let lobListview = PcfComponent("#NewSubmission-NewSubmissionScreen-ProductOffersDV-ProductSelectionLV");
         let productName = lobListview.find('td[id$=-Name_Cell]').exactText("Personal Auto");
         let selectButton = productName.sibling('td[id$=-Select]').find('.gw-LinkWidget[id$=-addSubmission]');
