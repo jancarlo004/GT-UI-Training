@@ -57,6 +57,7 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
+    
     async createNewVehicle(){
         
         for(let i=0; i< world.drivers.length -1; i++){ 
