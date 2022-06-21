@@ -76,9 +76,7 @@ export class DriverScreen {
             await this.addressLine.setValue(world.addressLine[i]);
             await this.state.selectOptionByLabel(world.state[i]);
             await t.pressKey('tab');
-            console.log("Start");
             await this.addressTypesss.selectOptionByLabel(world.addressType[i]);
-            console.log("End");
             await this.licenseNumber.setValue(world.licenseNumber[i]);
             await this.licenseStateForNewDrivers.selectOptionByLabel(world.licenseState[i]);
             await this.okButtonsss.click();
@@ -99,12 +97,9 @@ export class DriverScreen {
             await this.retrieveMVR.click();
 
     }
-
     async storeDriverName(){
-        let drivers = [];
         for(let i=0; i< await this.driverListView.rowCount(); i++){
              world.drivers[i] = await this.driverListView.getTextFromCellByColumnName(i,"Name");
-             console.log(world.drivers[i]);
 
         }
     }
