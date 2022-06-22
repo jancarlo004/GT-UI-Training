@@ -1,5 +1,4 @@
 import { AccountMenuActions } from "../../../pages/navigation/menuActions/AccountMenuActions";
-import { NewSubmission } from "../../../../ignite/previousGeneratedOutput/classFiles/policysolutions/pages/other/NewSubmission";
 import { OfferingScreen } from "../ScenarioPages/OfferingScreen";
 import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { DriverScreen } from "../ScenarioPages/DriverScreen";

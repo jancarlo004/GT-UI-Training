@@ -53,6 +53,8 @@ export class AccountCreationWithChallenge{
     }
 
     async State(state, value){
-        await t.click(accountTab.createAccount.component.find('.gw-label').withExactText(state).sibling('div').find('select').find('option').withText(value));
+        let dropdownElement = await t.click(accountTab.createAccount.component.find('.gw-label').withExactText(state).sibling('div').find('select'));
+        await t.click(dropdownElement);
+        await t.click(dropdownElement.find('option').withText(value));
     }
 }

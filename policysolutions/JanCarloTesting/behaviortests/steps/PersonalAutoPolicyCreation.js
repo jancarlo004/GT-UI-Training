@@ -3,7 +3,7 @@
 import { onApp } from "../../../../pageregistry/onApp";
 import { PersonalAutoPolicyCreation } from "../../Scenarios/PolicyCreation/PersonalAutoPolicyCreation";
 import { AccountCreation } from "../../Scenarios/PolicyCreation/AccountCreation";
-import {PAClaimCreation } from "../../../JanCarloTesting/Scenarios/PersonalAutoClaim/PAClaimCreation.js"
+import {PAClaimCreation } from "../../../JanCarloTesting/Scenarios/PersonalAutoClaim/PAClaimCreation.js";
 import { AccountCreationWithChallenge } from "../../Scenarios/PolicyCreation/AccountCreationWithChallenge";
 
 
