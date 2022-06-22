@@ -15,19 +15,6 @@ export class VehicleScreen{
     vehicleListView = PcfListView("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesLV");
     createNewVehicleForNewPersonButton = PcfButton("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel_tb-Add");
 
-    async createNewVehicle(){
-        
-        for(let i=0; i< world.drivers.length -1; i++){ 
-            await this.createVehicleButton.click();
-            await this.vehicleVin.setValue(world.newVehicleVin[i]);
-            await this.costNew.setValue(world.costNew[i]);
-            await this.licenseState.selectOptionByLabel(world.licenseStateInVehicle[i]);
-            await this.vehicleDriverAssignment.click();
-            let vehicleAssignedToDrivers =  this.vehicleDriverAssignment.component.find('.gw-subMenu').find('.gw-label').withText(world.drivers[i]);
-            console.log(vehicleAssignedToDrivers);
-            await t.click(vehicleAssignedToDrivers);
 
-        }
-    }
 }
 
