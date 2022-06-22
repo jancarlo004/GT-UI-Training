@@ -1,28 +1,13 @@
-import { PcfButton, PcfComponent, PcfListView, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
+'use strict'
+import { PcfButton, PcfCheckBox, PcfComponent, PcfTextInput, PcfListView, PcfSelectInput } from "@gtui/gt-ui-framework";
 import { t } from "testcafe";
-import { world } from "../../../KevTraining/utils/world";
+import  world from "../../utils/world";
 
-export class AutoPolicyPages {
-    accountTabBar = PcfComponent('#TabBar-AccountTab');
-    searchResultLV = PcfListView('#NewAccount-NewAccountScreen-NewAccountSearchResultsLV');
+export class DriversAndVehiclesPages {
 
-    newSubmission = PcfButton('#AccountFile-AccountFileMenuActions');
-    newSubmissionButton = PcfButton('#AccountFile-AccountFileMenuActions-AccountFileMenuActions_Create-AccountFileMenuActions_NewSubmission');
-    lineOfBusinessLV = PcfListView('#NewSubmission-NewSubmissionScreen-ProductOffersDV-1');
-    offeringSelection = PcfSelectInput('#SubmissionWizard-OfferingScreen-OfferingSelection');
-    nextButton = PcfButton('#SubmissionWizard-Next');
-    
-    // PA Pre-Qualification
-    isTheApplicantCurrentlyInsured = PcfSelectInput('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-PreQualQuestionSetsDV-QuestionSetsDV-0-QuestionSetLV-0-QuestionModalInput-ChoiceSelectInput_NoPost');
-
-    // Drivers 
-    addDriverButton = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver')
+    addDriverButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver')
     existingDriverButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver-AddExistingContact');
     existingDriver = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver-AddExistingContact-0-UnassignedDriver');
-        async clickExistingDriver() {
-            await t.hover(this.existingDriverButton.component).click(this.existingDriver.component);
-        }
-
     licenseNumber = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseNumber');
     licenseState = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseState');
     rolesTab = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-RolesCardTab');
@@ -45,7 +30,9 @@ export class AutoPolicyPages {
     newLicenseNumber = PcfTextInput('#NewPolicyDriverPopup-ContactDetailScreen-NewPolicyContactRoleDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseNumber');
     newLicenseState = PcfSelectInput('#NewPolicyDriverPopup-ContactDetailScreen-NewPolicyContactRoleDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseState');
     okButton = PcfButton('#NewPolicyDriverPopup-ContactDetailScreen-Update');
-    
+    addMVRLV = PcfListView('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV');
+    retrieveMVRButton = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-RetrieveMVRButton');
+
     // Vehicle Details
     createVehicleButton = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel_tb-Add');
     vin = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-Vin_DV');
@@ -54,9 +41,68 @@ export class AutoPolicyPages {
     driversLV = PcfListView('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV');
     insuredName = PcfComponent("#SubmissionWizard-JobWizardInfoBar-AccountName");
     licensePlate = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-LicensePlate_DV');
-        // Assign Driver to Vehicle
     assignDriverToVehicle = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver');
+
+async clickExistingDriver (){
+    let existingDriver = this.addDriverButton.component.find('.gw-subMenu').find('.gw-label').withText(world.accountName);
+    await t.click(this.addDriverButton.component).hover(this.existingDriverButton.component).click(existingDriver);
+    await t.wait(2000);
+    await this.licenseNumber.setValue("666618699");
+    await this.licenseState.selectOptionByLabel("Arizona");
+    await this.rolesTab.click();
+    await this.yearFirstLicensed.setValue("2001");
+    await this.numOfAccidents.selectOptionByLabel("0");
+    await this.numOfViolations.selectOptionByLabel("0");
+    await this.numOfAccidents2.selectOptionByLabel("0");
+    await this.numOfViolations2.selectOptionByLabel("0");
+    await this.addMVR();
+
+
+}
+
+async addNewDriver(){
+    for(let i=0; i< world.driverFirstName.length - 1; i++) {
+        await this.addDriverButton.click();
+        await this.newPersonButton.click();
+        await this.newDriverFirstName.setValue(world.driverFirstName[i]);
+        await this.newDriverLastName.setValue(world.driverLastName[i]);
+        await this.newDriverAddress1.setValue(world.addressLine[i]);
+        await this.newDriverState.selectOptionByLabel(world.state[i]);
+        await this.newDriverAddressType.selectOptionByLabel(world.addressType[i]);
+        await this.newLicenseNumber.setValue(world.licenseNumber[i]);
+        await this.newLicenseState.selectOptionByLabel(world.licenseState[i]);
+        await this.okButton.click();
+        await this.rolesTab.click();
+        await this.yearFirstLicensedDrivers.setValue(world.yearLicensed[i]);
+        await this.newNumOfAccidents.selectOptionByLabel(world.numberOfAccidentsPolicyLevel[i]);
+        await this.newNumOfViolations.selectOptionByLabel(world.numberOfViolationsPolicyLevel[i]);
+        await this.newNumOfAccidents2.selectOptionByLabel(world.numberOfAccidentsAccountLevel[i]);
+        await this.newNumOfViolations2.selectOptionByLabel(world.numberOfViolationsAccountLevel[i]);
+        await this.addMVR();
+        await this.storeDriverName();
+
+    }
+}
+
+async addMVR(){
+    await this.addMVRLV.clickOnCell(-1,0);
+    await this.retrieveMVRButton.click();
+
+ }
+
+async storeDriverName(){
+    let drivers = [];
+    for(let i=0; i< await this.driversLV.rowCount(); i++){
+        world.drivers[i] = await this.driversLV.getTextFromCellByColumnName(i,"Name");
+        console.log(world.drivers[i]);
+    }
+  }
+
+async addNewVehicle(){
     
 
+
+
+ }
 
 }

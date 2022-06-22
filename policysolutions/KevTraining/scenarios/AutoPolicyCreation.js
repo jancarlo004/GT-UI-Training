@@ -2,8 +2,11 @@
 import { AutoPolicyPages } from "../pages/account/AutoPolicyPages"
 import { t } from "testcafe"
 import { PcfComponent } from "@gtui/gt-ui-framework";
+import { world } from "../../KevTraining/utils/world";
+import { DriversAndVehiclesPages } from "../../KevTraining/pages/account/DriversAndVehiclesPages";
 
 const autoPolicyPages = new AutoPolicyPages();
+const driversAndVehiclesPages = new DriversAndVehiclesPages();
 
 
 export class AutoPolicyCreation{
@@ -22,59 +25,24 @@ async CreateAutoPolicyWith3DriversAnd3Vehicles (){
     // Policy Info
     await autoPolicyPages.nextButton.click();
     
-    // Driver 1:
-    await autoPolicyPages.addDriverButton.click();
-    await autoPolicyPages.clickExistingDriver();
-    await autoPolicyPages.licenseNumber.setValue("666618699");
-    await autoPolicyPages.licenseState.selectOptionByLabel("Arizona");
-    await autoPolicyPages.rolesTab.click();
-    await autoPolicyPages.yearFirstLicensed.setValue("2001");
-    await autoPolicyPages.numOfAccidents.selectOptionByLabel("0");
-    await autoPolicyPages.numOfViolations.selectOptionByLabel("0");
-    await autoPolicyPages.numOfAccidents2.selectOptionByLabel("0");
-    await autoPolicyPages.numOfViolations2.selectOptionByLabel("0");
-
-    // Driver 2:
-    await autoPolicyPages.addDriverButton.click();
-    await autoPolicyPages.newPersonButton.click();
-    await autoPolicyPages.newDriverFirstName.setValue("Mocca");
-    await autoPolicyPages.newDriverLastName.setValue("Cake");
-    await autoPolicyPages.newDriverAddress1.setValue("Amazon");
-    await autoPolicyPages.newDriverState.selectOptionByLabel("Arizona");
-    await autoPolicyPages.newDriverAddressType.selectOptionByLabel("Billing");
-    await autoPolicyPages.newLicenseNumber.setValue("666618699");
-    await autoPolicyPages.newLicenseState.selectOptionByLabel("Arizona");
-    await autoPolicyPages.okButton.click();
-    await autoPolicyPages.rolesTab.click();
-    await autoPolicyPages.yearFirstLicensedDrivers.setValue("2002");
-    await autoPolicyPages.newNumOfAccidents.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfViolations.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfAccidents2.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfViolations2.selectOptionByLabel("0");
-
-    // Driver 3:
-    await autoPolicyPages.addDriverButton.click();
-    await autoPolicyPages.newPersonButton.click();
-    await autoPolicyPages.newDriverFirstName.setValue("Choco");
-    await autoPolicyPages.newDriverLastName.setValue("Cake");
-    await autoPolicyPages.newDriverAddress1.setValue("Amazon");
-    await autoPolicyPages.newDriverState.selectOptionByLabel("Arizona");
-    await autoPolicyPages.newDriverAddressType.selectOptionByLabel("Billing");
-    await autoPolicyPages.newLicenseNumber.setValue("666618690");
-    await autoPolicyPages.newLicenseState.selectOptionByLabel("Arizona");
-    await autoPolicyPages.okButton.click();
-    await autoPolicyPages.rolesTab.click();
-    await autoPolicyPages.yearFirstLicensedDrivers.setValue("2003");
-    await autoPolicyPages.newNumOfAccidents.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfViolations.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfAccidents2.selectOptionByLabel("0");
-    await autoPolicyPages.newNumOfViolations2.selectOptionByLabel("0");
+    // Drivers Screen
+    await driversAndVehiclesPages.clickExistingDriver();
+    await t.wait(2000);
+    await driversAndVehiclesPages.addNewDriver();
+    await t.wait(2000);
     await autoPolicyPages.nextButton.click();
 
-    
+    // Vehicle Details
+    await autoPolicyPages.createVehicleButton.click();
+    await autoPolicyPages.vin.setValue("1B7HF16Y21S207435");
+    //await autoPolicyPages.vehicleLicensedState.selectOptionByLabel("Arizona");
+    await autoPolicyPages.costNew.setValue("1000");
+    await autoPolicyPages.assignDriverToVehicle.click();
+    // let driver = autoPolicyPages.assignDriverToVehicle.component.find('div.gw-subMenu gw-open').find('div.gw-label').withText(insuredName);
+    // await t.click(driver);
+        
 
-
-     }
+ }
          
 
 

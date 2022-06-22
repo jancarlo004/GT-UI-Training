@@ -11,10 +11,6 @@ When (/^I create InLand Marine policy in PC$/, async function() {
     await inLandMarineCreation.InLandMarineCreation();
 
 });
-// Then (/^Verify if the InLand Marine policy is binded in PC$/, async function() {
-    //await inLandMarineCreation.verifyInLandMarineIsBound();
-
-// });
 
 When (/^I create an In Land Marine claim$/, async function () {
     await onAppCC.loginWithUser("bbaker", "gw");

@@ -22,7 +22,11 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     organization = PcfTextInput('#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-Producer');
     producerCode = PcfSelectInput('#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-ProducerCode');
     updateButton = PcfButton('#CreateAccount-CreateAccountScreen-Update');
-   
+    insuredName = PcfComponent('#AccountFile_Summary-AccountSummaryDashboard-AccountDetailsDetailViewTile-AccountDetailsDetailViewTile_DV-AccountHolder');
+    createAccountDV = PcfComponent('#CreateAccount-CreateAccountScreen-CreateAccountDV');
+    newAccountDV = PcfComponent('#NewAccount-NewAccountScreen-NewAccountSearchDV');
+
+
 // New Submission Home Policy
     actions = PcfComponent('#AccountFile-AccountFileMenuActions');
     newSubmission = PcfButton('#AccountFile-AccountFileMenuActions-AccountFileMenuActions_Create-AccountFileMenuActions_NewSubmission');
