@@ -1,5 +1,4 @@
 import { AccountMenuActions } from "../../../pages/navigation/menuActions/AccountMenuActions";
-import { NewSubmission } from "../../../../ignite/previousGeneratedOutput/classFiles/policysolutions/pages/other/NewSubmission";
 import { OfferingScreen } from "../ScenarioPages/OfferingScreen";
 import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { DriverScreen } from "../ScenarioPages/DriverScreen";
@@ -9,7 +8,6 @@ import { t } from "testcafe";
 import world from "../../util/world";
 
 const accountMenuActions = new AccountMenuActions();
-const newSubmission = new NewSubmission();
 const offeringScreen = new OfferingScreen();
 const newSubmissionWizard = new NewSubmissionWizard();
 const driverScreen = new DriverScreen();
@@ -57,7 +55,7 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
-    
+
     async createNewVehicle(){
         
         for(let i=0; i< world.drivers.length -1; i++){ 
