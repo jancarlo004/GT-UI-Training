@@ -7,9 +7,6 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
-import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
-import { CoverageScreen } from "../ScenarioPages/CoverageScreen";
-import { takeWhile } from "lodash";
 
 const accountMenuActions = new AccountMenuActions();
 const newSubmission = new NewSubmission();
@@ -60,6 +57,7 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
+    
     async createNewVehicle(){
         
         for(let i=0; i< world.drivers.length -1; i++){ 
@@ -69,7 +67,6 @@ export class PersonalAutoPolicyCreation{
             await vehicleScreen.licenseState.selectOptionByLabel(world.licenseStateInVehicle[i]);
             await vehicleScreen.vehicleDriverAssignment.click();
             let vehicleAssignedToDrivers =  vehicleScreen.vehicleDriverAssignment.component.find('.gw-subMenu').find('.gw-label').withText(world.drivers[i]);
-            console.log(vehicleAssignedToDrivers);
             await t.click(vehicleAssignedToDrivers);
 
         }

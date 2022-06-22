@@ -20,7 +20,8 @@ export class PAClaimCreation{
         await paClaimCreation.lossDate.setValue(world.effectiveDate);
         await paClaimCreation.nextButton.click();
         await paClaimCreation.nameInsureds.selectFirstOptionWithValue();
-        await t.wait(1000);
+        await t.pressKey('tab');
+        await paClaimCreation.relationToInsured.selectOptionByLabel("Self/Insured");
         await paClaimCreation.nextButton.click();
         await paClaimCreation.lossCause.selectOptionByLabel("Animal");
         await paClaimCreation.lossLocation.selectFirstOptionWithValue();
@@ -80,11 +81,6 @@ export class PAClaimCreation{
         let alternativeAccoumodation = paClaimCreation.addServiceListview.component.find('td[id$=-ServiceLeaf_Cell]').withExactText("Alternative accommodation");
         let findCheckBoxAlternative = alternativeAccoumodation.find('div.gw-IteratorEntryCheckBoxWidget[id$=-_Checkbox]');
         await t.click(findCheckBoxAlternative);
-
-        // let adjudicateClaim = paClaimCreation.addServiceListview.component.find('td[id$=-ServiceLeaf_Cell]').withExactText("Adjudicate claim");
-        // let findCheckBoxAdjudicate = adjudicateClaim.find('div.gw-IteratorEntryCheckBoxWidget[id$=-_Checkbox]');
-        // await t.click(findCheckBoxAdjudicate);
-
         await paClaimCreation.okButton.click();
         await t.wait(1000);
         await paClaimCreation.requestType.selectOptionByLabel("Quote");

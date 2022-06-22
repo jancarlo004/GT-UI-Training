@@ -41,15 +41,22 @@ export class PAClaimCreations{
     newVendor = PcfComponent("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-Specialist-ClaimNewServiceRequestSpecialistPickerMenuItemSet-NewVendor");
     serviceAddress = PcfSelectInput("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-NewServiceRequestInstructionInputSet-ServiceAddressPicker");
     addMenuIcon = PcfButton("#NewServiceRequest-NewServiceRequestScreen-NewServiceRequestDV-NewServiceRequestInstructionInputSet-CustomerContact-CustomerContactMenuIcon");
+    relationToInsured = PcfSelectInput("#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-PanelRow-BasicInfoDetailViewPanelDV-Claim_ReportedByType");
+    autoRepairShopName = PcfTextInput("#NewContactPopup-ContactDetailScreen-ContactBasicsDV-OrganizationName-GlobalContactNameInputSet-Name");
+    autoRepairShopUpdateButton = PcfButton("#NewContactPopup-ContactDetailScreen-ContactBasicsDV_tb-ContactDetailToolbarButtonSet-CustomUpdateButton");
+    submitButton = PcfButton("#NewServiceRequest-SubmitButton");
+
     async getCollisionExposure(){
         await t.hover(this.coverageType.component).hover(this.cLabel.component).click(this.collision.component);
     }
 
     async createAutoBodyRepairShopButton(){
-        await t.hover(newVendor.component).click(autoBodyrepairShop.component);
+        await t.hover(this.newVendor.component).click(this.autoBodyrepairShop.component);
+        await this.autoRepairShopName.setValue("JCM Auto Repair Shop");
+        await this.autoRepairShopUpdateButton.click();
+        await t.wait(1000);
+        await this.submitButton.click();
     }
-
-
 }
 
   
