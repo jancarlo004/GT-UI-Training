@@ -5,4 +5,7 @@ export class AccountTabBar {
 	accountTabAccountTab_NewAccount = PcfComponent('#TabBar-AccountTab-AccountTab_NewAccount');
 	tabBarAccountTab = PcfComponent('#TabBar-AccountTab');
 	tabBarWidgetmoreoptions = PcfComponent('#TabBarWidget--more-options');
+
+	createAccount = PcfComponent("#CreateAccount-CreateAccountScreen-CreateAccountDV");
+	searchAccount = PcfComponent("#NewAccount-NewAccountScreen-NewAccountSearchDV");
 }
