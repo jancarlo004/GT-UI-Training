@@ -1,0 +1,11 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+
+export class PersonalAutoAcceleratedMenuActions {
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Drivers = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Drivers');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Endorsements = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Endorsements');
+	policyMenuItemSetPolicyMenuItemSet_PersonalAuto = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PersonalAuto');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_PolicyInfo = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PolicyInfo');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Pricing = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Pricing');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Vehicles = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Vehicles');
+	policyMenuItemSet_PersonalAutogetId = PcfComponent('#PolicyMenuItemSet_PersonalAuto.getId()');
+}
