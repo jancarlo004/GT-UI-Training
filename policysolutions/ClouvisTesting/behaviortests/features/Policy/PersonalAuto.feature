@@ -1,5 +1,4 @@
 Feature: Create Personal Auto Policy
-
 @PersonalAuto
 Scenario: Creating Auto Policy in Policy Center
   Given login in PC
