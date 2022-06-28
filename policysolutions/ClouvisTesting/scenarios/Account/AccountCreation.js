@@ -9,10 +9,10 @@ const accountTabBar = new AccountTabBar();
 
 export class AccountCreation{
 
-    async createAccount(){
+    async createAccount() {
         await t.click(accountTabBar.tabBarAccountTab.component.find('div.gw-action--expand-button'));
         await accountTabBar.accountTabAccountTab_NewAccount.click();
-        
+
         await createAccountScreen.setTextFieldValue("First name", "Test");
         await createAccountScreen.setTextFieldValue("Last name", "Denosta");
         await createAccountScreen.selectOptionValue("Country", "US");
@@ -29,7 +29,7 @@ export class AccountCreation{
         await createAccountScreen.searchResetButtonOrganization("S");
 
         await t.pressKey('tab');
-        await createAccountScreen.selectOrganizationResultsListView();
+        await createAccountScreen.selectOrganizationResultsListView("Enigma Fire & Casualty");
         await createAccountScreen.selectOptionValueForCreateAccount("Producer Code", "ProducerCode:3")
         await createAccountScreen.updateCancelButtonForCreateAccount("Update");
     }
