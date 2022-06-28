@@ -46,8 +46,8 @@ export class CreateAccountScreen {
         await t.click(this.organizationSearchPopupScreen.component.find('.gw-emptyLabel').sibling('div').find('div.gw-shortcutKey').withText(buttonName));
     }
 
-    async selectOrganizationResultsListView(){
-        let organizationSearchResults = this.organizationSearchPopupScreen.component.find('div.gw-ListViewWidget[id$=-OrganizationSearchResultsLV]').find('td[id$=-Name_Cell]').withExactText("Enigma Fire & Casualty");
+    async selectOrganizationResultsListView(orgName){
+        let organizationSearchResults = this.organizationSearchPopupScreen.component.find('div.gw-ListViewWidget[id$=-OrganizationSearchResultsLV]').find('td[id$=-Name_Cell]').withExactText(orgName);
         let organizationSelection = organizationSearchResults.sibling('td').find('div').find('.gw-label').withText("Select");
         await t.click(organizationSelection);
     }
