@@ -14,7 +14,7 @@ export class InLandMarinePolicyCreation {
         await inlandMarinePages.organizationType.selectFirstOptionWithValue();
         await inlandMarinePages.nextButton.click();
         await inlandMarinePages.addCoverageButton.click();
-
+            
         await inlandMarinePages.contructorsEquipment.click();
         await inlandMarinePages.nextButton.click();
         await inlandMarinePages.nextButton.click();
