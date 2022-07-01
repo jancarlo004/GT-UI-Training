@@ -28,8 +28,8 @@ module.exports = {
     numberOfViolationsPolicyLevel: ['0','0'],
     numberOfAccidentsAccountLevel: ['0','0'],
     numberOfViolationsAccountLevel: ['0','0'],
-    costNew: ['10000','20000'],
-    newVehicleVin: ['3VWSF71K96M764402','2C3CDYAG4EH185978'],
-    licenseStateInVehicle: ['Arizona','Arizona']
+    costNew: ['10000','20000','3000'],
+    newVehicleVin: ['3VWSF71K96M764402','2C3CDYAG4EH185978','JTNBK46K473002082'],
+    licenseStateInVehicle: ['Arizona','Arizona','Arizona']
  
 };

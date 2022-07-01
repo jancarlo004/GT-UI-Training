@@ -3,12 +3,11 @@ import { DriverScreen } from "../ScenarioPages/DriverScreen";
 import { OfferingScreen } from "../ScenarioPages/OfferingScreen";
 import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { AutoPolicyWithChallengePages } from "../ScenarioPages/AutoPolicyWithChallengePages";
+import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import {t} from "testcafe";
 
 const accountMenuActions = new AccountMenuActions();
 const driverScreen = new DriverScreen();
-const offeringScreen = new OfferingScreen();
-const newSubmissionWizard = new NewSubmissionWizard();
 const autoPolicyWithChallenge = new AutoPolicyWithChallengePages();
 
 export class AutoPolicyWithChallenge{
@@ -32,7 +31,9 @@ export class AutoPolicyWithChallenge{
         await autoPolicyWithChallenge.driverScreenNextButton("Next");
         await t.wait(1000);
         await autoPolicyWithChallenge.createNewVehicle();
-
+        await autoPolicyWithChallenge.vehicleScreenNextButton("Next");
+        await autoPolicyWithChallenge.coverageScreenNextButton("Quote");
+        await autoPolicyWithChallenge.quoteScreenIssuePolicy("Bind Options");
 
     }
 }

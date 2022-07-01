@@ -1,6 +1,9 @@
 import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
 import { t } from "testcafe";
+import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import world from "../../util/world";
+
+const quoteScreen = new QuoteScreen();
 
 export class AutoPolicyWithChallengePages{
 
@@ -15,6 +18,9 @@ export class AutoPolicyWithChallengePages{
     driversLV = PcfListView("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV");
     retrieveMVRButton = PcfButton("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-RetrieveMVRButton");
     vehicleScreen = PcfComponent("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen");
+    coverageScreen = PcfComponent("#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PersonalAutoScreen");
+    quoteScreen = PcfComponent("#SubmissionWizard-SubmissionWizard_QuoteScreen");
+    issuePolicy = PcfButton("#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue");
 
     async selectAutoLOB(lob){
         let personalAutoLabel = this.productLV.component.find('td[id$=-Name_Cell]').withExactText(lob);
@@ -156,7 +162,20 @@ async selectInputFieldForCreateVehicle(selectInputName, selectInputOptionValue){
     let dropdownElements = this.vehicleScreen.component.find('.gw-label').withExactText(selectInputName).sibling('div').find('select');
     await t.click(dropdownElements);
     await t.click(dropdownElements.find('option').withText(selectInputOptionValue));
-
 }
 
+async vehicleScreenNextButton(nextButton){
+    await t.click(this.vehicleScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
+}
+async coverageScreenNextButton(nextButton){
+    await t.click(this.coverageScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
+}
+
+async quoteScreenIssuePolicy(nextButton){
+    let bindOptionsButton = this.quoteScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton);
+    await t.click(bindOptionsButton);
+    await this.issuePolicy.click();
+    world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
+
+    }
 }
