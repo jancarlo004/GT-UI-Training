@@ -3,7 +3,7 @@ Feature: Policy Creation
 Background:
     Given I logged in Policy Center
 
-@PAPolicyWithClaim
+@PAPolicyWithClaim @auto
 Scenario: Policy Creation
     Given I create a Personal Auto Policy
     # Then Personal Auto Policy is created
@@ -14,8 +14,7 @@ Scenario: Policy Creation
     Then reserve is created
 
      
-
-@HomePolicy
+@PolicyCreation @home
 Scenario: HO Policy Creation
     Given I create a HomeOwners Policy
     Then HomeOwners Policy is created 
