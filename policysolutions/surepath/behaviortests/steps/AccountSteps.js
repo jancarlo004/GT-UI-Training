@@ -2,7 +2,7 @@
 const { Given, When, Then } = require("@cucumber/cucumber");
 import { AccountScenario } from "../../scenarios/AccountScenario.js";
 
-let accountScenario = new AccountScenario();
+let accountScenario = new AccountScenario(); 
 
 Given(/^a Personal account$/, async function() {
   await accountScenario.createPersonalAccount();

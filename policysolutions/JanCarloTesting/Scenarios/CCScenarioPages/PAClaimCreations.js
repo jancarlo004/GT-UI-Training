@@ -46,7 +46,8 @@ export class PAClaimCreations{
     }
 
     async createAutoBodyRepairShopButton(){
-        await t.hover(newVendor.component).click(autoBodyrepairShop.component);
+        await t.hover(this.newVendor.component)
+               .click(this.autoBodyrepairShop.component);
     }
 
 

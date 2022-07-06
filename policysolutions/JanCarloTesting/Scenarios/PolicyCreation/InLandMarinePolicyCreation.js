@@ -10,7 +10,7 @@ export class InLandMarinePolicyCreation {
 
         await inlandMarinePages.actionsMenuButton.click();
         await inlandMarinePages.newSubmission.click();
-        await this.inlandMarinePolicyCreation("Inland Marine");
+        await this.selectInlandMarineLOB("Inland Marine");
         await inlandMarinePages.organizationType.selectFirstOptionWithValue();
         await inlandMarinePages.nextButton.click();
         await inlandMarinePages.addCoverageButton.click();

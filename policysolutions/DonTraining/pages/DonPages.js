@@ -39,13 +39,14 @@ export class DonPages {
     addDriverToQuote = PcfComponent ('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver');
     quoteSubmission = PcfButton ('#SubmissionWizard-SubmissionWizard_PolicyReviewScreen-JobWizardToolbarButtonSet-QuoteTypeToolbarButtonSet-Quote');
     bindPolicy = PcfComponent ('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions');
+    
+
 
 
     async issuePolicy(value) {
         await t.click(this.bindPolicy.component.find('div.gw-label').withText(value))
 
     }
-
 
 
     async addDriverOnVehicle(value) {

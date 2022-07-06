@@ -1,0 +1,15 @@
+Feature: Searching for a Contact
+
+@donContact
+
+Scenario Outline: <ContactType> <Identifier> Contact Search
+  Given a known <ContactType>
+  When I search for that policy with their <Identifier>
+  Then the contact was found
+
+  Examples:
+  | ContactType  | Identifier           |
+  | Person       | First and Last Name  |
+  | Person       | Tax ID               |
+  | Company      | Name                 |
+  | Company      | Tax ID               |
