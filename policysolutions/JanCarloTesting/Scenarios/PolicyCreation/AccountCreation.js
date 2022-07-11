@@ -40,7 +40,6 @@ export class AccountCreation{
             await newPersonAccountScreen.updateButton.click();
             await t.wait(1000);
             world.accountName = await newPersonAccountScreen.accountName.component.innerText;
-
         }
     }
 }

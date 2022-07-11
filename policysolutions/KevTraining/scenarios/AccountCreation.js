@@ -13,7 +13,7 @@ export class AccountCreation{
         await kevPages.accountTab.click();
         await t.click(kevPages.accountTab.component.find('div.gw-action--expand-button'));
         await kevPages.newAccount.click();
-        await kevPages.firstName.setValue("Kev");
+        await kevPages.firstName.setValue("Kevz");
         await kevPages.lastName.setValue("Cortez");
         await kevPages.searchButton.click();
         if(await autoPolicyPages.searchResultLV.rowCount() == 0){
@@ -34,9 +34,5 @@ export class AccountCreation{
             await autoPolicyPages.searchResultLV.clickOnCell(await autoPolicyPages.searchResultLV.rowCount()-1,1);
             world.accountName = await kevPages.insuredName.component.innerText;
         }
-        
-        
-
-  
     }
 }

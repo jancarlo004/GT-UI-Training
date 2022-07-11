@@ -54,9 +54,7 @@ export class AutoPolicyPages {
     driversLV = PcfListView('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV');
     insuredName = PcfComponent("#SubmissionWizard-JobWizardInfoBar-AccountName");
     licensePlate = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-LicensePlate_DV');
-        // Assign Driver to Vehicle
+    // Assign Driver to Vehicle
     assignDriverToVehicle = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver');
     
-
-
 }

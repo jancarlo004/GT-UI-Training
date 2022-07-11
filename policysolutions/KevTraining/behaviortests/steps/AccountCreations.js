@@ -12,6 +12,6 @@ const detailViewPractice = new DetailViewPractice();
 
 Given(/^I create account in PC$/, async function() {
     await OnAppPC.loginWithUser("bbaker", "gw");
-    await detailViewPractice.detailViewPractice();
+    await accountCreation.accountCreation();
   });
 

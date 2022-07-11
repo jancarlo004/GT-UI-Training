@@ -25,7 +25,7 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     insuredName = PcfComponent('#AccountFile_Summary-AccountSummaryDashboard-AccountDetailsDetailViewTile-AccountDetailsDetailViewTile_DV-AccountHolder');
     createAccountDV = PcfComponent('#CreateAccount-CreateAccountScreen-CreateAccountDV');
     newAccountDV = PcfComponent('#NewAccount-NewAccountScreen-NewAccountSearchDV');
-
+    accountTopLevel = PcfButton('#gw-top-level gw-highlight-changed-data');
 
 // New Submission Home Policy
     actions = PcfComponent('#AccountFile-AccountFileMenuActions');
@@ -37,11 +37,11 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     radioButtonYes = PcfButton ('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-PreQualQuestionSetsDV-QuestionSetsDV-0-QuestionSetLV-3-QuestionModalInput-BooleanRadioInput_0');
     submissionNext = PcfButton('#SubmissionWizard-Next');
     
-    // Dwelling screen
+// Dwelling screen
     swimmingPoolCheckBox = PcfCheckBox('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingDetailsDV-HOPSwimmingPoolInputSet-SwimmingPool');
     fireProtection = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingDetailsDV-HOPDwellingProtectionInputSet-ProtectionClass');
 
-    // Additional Interests and Insureds screen
+// Additional Interests and Insureds screen
     addInterestAndInsured = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-AdditionalInterestCardTab');
     addInterestButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingAdditionalInterestDetailsDV-AdditionalInterestLV_tb-AddContactsButton');
     addOtherContacts = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingAdditionalInterestDetailsDV-AdditionalInterestLV_tb-AddContactsButton-AddOtherContact');
@@ -59,10 +59,10 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     certReqNo = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingAdditionalInterestDetailsDV-AdditionalInterestLV-0-CertRequired_1');
     contactNumber = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingAdditionalInterestDetailsDV-AdditionalInterestLV-0-ContractNumber');
 
-    // Dwelling Constructions screen
+// Dwelling Constructions screen
     wiring = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingConstructionScreen-HOPDwellingConstructionPanelSet-HOPDwellingConstructionDetailsDV-WiringType');
 
-    // Additional Named Insured screen
+// Additional Named Insured screen
     addNamedInsured = PcfButton ('#SubmissionWizard-LOBWizardStepGroup-SubmissionWizard_PolicyInfoScreen-SubmissionWizard_PolicyInfoDV-AdditionalNamedInsuredInputSet-NamedInsuredsLV_tb-AddContactsButton');
     newPerson = PcfButton ('#SubmissionWizard-LOBWizardStepGroup-SubmissionWizard_PolicyInfoScreen-SubmissionWizard_PolicyInfoDV-AdditionalNamedInsuredInputSet-NamedInsuredsLV_tb-AddContactsButton-1-ContactType');
     firstNameNew = PcfTextInput('#NewAdditionalNamedInsuredPopup-ContactDetailScreen-NewPolicyContactRoleDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-GlobalPersonNameInputSet-FirstName');
@@ -74,30 +74,30 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     addressTypeNew = PcfSelectInput('#NewAdditionalNamedInsuredPopup-ContactDetailScreen-NewPolicyContactRoleDetailsCV-PolicyContactDetailsDV-AddressType');
     okButton = PcfButton('#NewAdditionalNamedInsuredPopup-ContactDetailScreen-Update');
 
-    // Coverages screen
+// Coverages screen
     coinsurance = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPCoveragesScreen-HOPMainCoveragesPanelSet-dwellingCoveragePatternIterator-0-CoverageInputSet-CovPatternInputGroup-HOPCovACoinsurance');
     lossOfRentalIncomeNo = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPCoveragesScreen-HOPMainCoveragesPanelSet-dwellingCoveragePatternIterator-3-CoverageInputSet-CovPatternInputGroup-HOPCovDLossOfRent_1');
     puCivilAuthority = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPCoveragesScreen-HOPMainCoveragesPanelSet-dwellingCoveragePatternIterator-3-CoverageInputSet-CovPatternInputGroup-HOPCovDProhibitedUse');
 
-    // Modifiers screen
+// Modifiers screen
     professional = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPModifiersScreen-HOPModifiersPanelSet-LineModifiers-HOPModifiersInputSet-2-TypeKeyModifier');
     loyalty = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPModifiersScreen-HOPModifiersPanelSet-LineModifiers-HOPModifiersInputSet-3-TypeKeyModifier');
     
-    // Policy Review screen
+// Policy Review screen
     quouteButton = PcfButton('#SubmissionWizard-SubmissionWizard_PolicyReviewScreen-JobWizardToolbarButtonSet-QuoteTypeToolbarButtonSet-Quote');
 
-    // Quote screen
+// Quote screen
     bindOptions = PcfButton('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions');
     issuePolicyButton = PcfButton('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue');
-    // Verify bound
+// Verify bound
     policyBound = PcfComponent('#JobComplete-JobWizardInfoBar-JobLabel');
-    // Policy find
+// Policy find
     policyNumber = PcfComponent('#JobComplete-JobWizardInfoBar-PolicyNumber');
 
 // New Submission In-Land Marine Policy
     orgType = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-SubmissionWizard_PolicyInfoScreen-SubmissionWizard_PolicyInfoDV-AccountInfoInputSet-OrganizationType');
 
-    // Coverage part selection screen
+// Coverage part selection screen
     clickCoveragePart = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMPartSelectionScreen-IMCoveragePartSelectionDV-TEMP_0_LV_tb-addCoveragePartButton');
     selectCoveragePart = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMPartSelectionScreen-IMCoveragePartSelectionDV-TEMP_0_LV_tb-addCoveragePartButton-0-eachpart');
         async addCoveragePart() {
@@ -106,19 +106,16 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     }  
     coveragePartCheckBox = PcfCheckBox('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMPartSelectionScreen-IMCoveragePartSelectionDV-TEMP_0_LV-0-_Checkbox');
 
-    // Buildings and Locations screen
+// Buildings and Locations screen
     expandButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMBuildingsScreen-IMBuildingsAndLocationsLV-0-Actions-ActionsMenuIcon');
     addBuildingButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMBuildingsScreen-IMBuildingsAndLocationsLV-0-Actions-AddBuilding');
     newBuilding = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMBuildingsScreen-IMBuildingsAndLocationsLV-0-Actions-AddBuilding-AddNewBuilding');
         async addBuilding() {
-            await t.click(this.expandButton.component)
-            .hover(this.addBuildingButton.component)
-            .click(this.newBuilding.component);
+            await t.click(this.expandButton.component).hover(this.addBuildingButton.component).click(this.newBuilding.component);
         }
     description = PcfTextInput('#IMBuildingPopup-DetailsDV-Description');
     okButton2 = PcfButton('#IMBuildingPopup-Update');
     
-
 
 // Accounts Receivable screen
     yesReporting = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-IMPartScreen-IMARPanelSet-IMARPartLevelInformationDV-reporting_0');
@@ -143,6 +140,5 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
     claimLossCause = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-LossDetailsPanel-FNOLWizard_NewLossDetailsPanelSet-Claim_LossCause');
     claimState = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-LossDetailsPanel-FNOLWizard_NewLossDetailsPanelSet-CCAddressInputSet-globalAddressContainer-globalAddress-GlobalAddressInputSet-State');
     claimFinishButton = PcfButton('#FNOLWizard-Finish');
-
     claimSaved = PcfComponent('#NewClaimSaved-NewClaimSavedScreen-ttlBar');
-}   
+}    

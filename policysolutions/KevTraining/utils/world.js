@@ -30,5 +30,6 @@ module.exports = {
     numberOfViolationsAccountLevel: ['0','0','0'],
     costNew: ['10000','20000','3000'],
     newVehicleVin: ['3VWSF71K96M764402','2C3CDYAG4EH185978','5TBBT44141S121440'],
-    licenseStateInVehicle: ['Arizona','Arizona','Arizona']
+    licenseStateInVehicle: ['Arizona','Arizona','Arizona'],
+    driverType: ""
 };

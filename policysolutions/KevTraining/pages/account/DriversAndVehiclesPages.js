@@ -2,12 +2,12 @@
 import { PcfButton, PcfCheckBox, PcfComponent, PcfTextInput, PcfListView, PcfSelectInput } from "@gtui/gt-ui-framework";
 import { t } from "testcafe";
 import  world from "../../utils/world";
+import { AutoPolicyPages } from "./AutoPolicyPages";
 
 export class DriversAndVehiclesPages {
 
     addDriverButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver')
     existingDriverButton = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver-AddExistingContact');
-    existingDriver = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-AddDriver-AddExistingContact-0-UnassignedDriver');
     licenseNumber = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseNumber');
     licenseState = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-LicenseInputSet-LicenseState');
     rolesTab = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-RolesCardTab');
@@ -91,7 +91,6 @@ async addMVR(){
  }
 
 async storeDriverName(){
-    let drivers = [];
     for(let i=0; i< await this.driversLV.rowCount(); i++){
         world.drivers[i] = await this.driversLV.getTextFromCellByColumnName(i,"Name");
         console.log(world.drivers[i]);
@@ -99,10 +98,15 @@ async storeDriverName(){
   }
 
 async addNewVehicle(){
-    
-
-
-
+    for(let i=0; i< world.drivers.length ; i++){
+    await this.createVehicleButton.click();
+    await this.vin.setValue(world.newVehicleVin[i]);
+    await t.pressKey("tab");
+    await this.vehicleLicensedState.selectOptionByLabel("Arizona");
+    await this.costNew.setValue("1000");
+    await this.assignDriverToVehicle.click();
+    let assignDrivers = this.assignDriverToVehicle.component.find(".gw-subMenu").find(".gw-label").withText(world.drivers[i]);
+    await t.click(assignDrivers);
+  }
  }
-
 }

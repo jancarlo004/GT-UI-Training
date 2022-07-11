@@ -1,6 +1,6 @@
 Feature: Policy Creation
 Background: 
-    Given I create account in PC / select existing account in PC
+    Given I create account in PC
 
 @createHOMEpolicy
 Scenario: Creating a HOME policy in PC

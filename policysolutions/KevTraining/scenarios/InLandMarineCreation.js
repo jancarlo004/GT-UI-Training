@@ -1,7 +1,6 @@
 'use strict'
 import { Kevpages } from "../pages/account/Kevpages";
 import { t } from "testcafe"
-// import { world } from "@cucumber/cucumber";
 import  world  from "../../KevTraining/utils/world";
 
 const kevPages = new Kevpages();
@@ -61,9 +60,9 @@ export class InLandMarineCreation {
         await kevPages.newClaim.click();
         await kevPages.claimPolicyNum.setValue(world.policyNumber);
         await kevPages.claimSearchButton.click();
-        await kevPages.claimLossDate.setValue("06/13/2022");
+        await kevPages.claimLossDate.setValue("07/11/2022");
         await kevPages.claimNextButton.click();
-        await kevPages.claimName.selectOptionByLabel("Máel Strom");
+        await kevPages.claimName.selectOptionByLabel("Kevz Cortez");
         await kevPages.claimNextButton.click();
         await kevPages.claimLossCause.selectOptionByLabel("Malicious mischief and vandalism");
         await kevPages.claimState.selectOptionByLabel("Arizona");
@@ -78,8 +77,5 @@ export class InLandMarineCreation {
         let claimResult = await kevPages.claimSaved.component.innerText;
         console.log("Result: " + claimResult);
         await t.expect(claimResult).contains(claimSaved);
-
-
     }
-
 }
