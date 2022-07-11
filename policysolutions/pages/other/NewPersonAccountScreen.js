@@ -21,5 +21,4 @@ export class NewPersonAccountScreen {
         await t.click(this.producerCode.component);
 		await t.click(this.producerCode.component.find('option').withText(valueToSelect));
     }
-
 }

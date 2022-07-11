@@ -3,8 +3,9 @@
 import { onApp } from "../../../../pageregistry/onApp";
 import { PersonalAutoPolicyCreation } from "../../Scenarios/PolicyCreation/PersonalAutoPolicyCreation";
 import { AccountCreation } from "../../Scenarios/PolicyCreation/AccountCreation";
-import {PAClaimCreation } from "../../../JanCarloTesting/Scenarios/PersonalAutoClaim/PAClaimCreation.js"
-
+import {PAClaimCreation } from "../../../JanCarloTesting/Scenarios/PersonalAutoClaim/PAClaimCreation.js";
+import { AccountCreationWithChallenge } from "../../Scenarios/PolicyCreation/AccountCreationWithChallenge";
+import { AutoPolicyWithChallenge } from "../../Scenarios/PolicyCreation/AutoPolicyWithChallenge";
 
 
 const { Given, When, Then } = require("@cucumber/cucumber");
@@ -13,10 +14,12 @@ const onCCApp = new onApp("CC");
 const personalAutoPolicyCreation = new PersonalAutoPolicyCreation();
 const accountCreation = new AccountCreation();
 const paClaimCreation = new PAClaimCreation();
+const accountCreationWithChallenge = new AccountCreationWithChallenge();
+const autoPolicyCreationWithChallenge = new AutoPolicyWithChallenge();
 
 Given(/^I create a Personal Auto Policy$/, async function(){
-    await accountCreation.CreatePersonalAccount();
-    await personalAutoPolicyCreation.personalAutoPolicyCreation();
+    await accountCreationWithChallenge.accountCreationWithChallenge();
+    await autoPolicyCreationWithChallenge.autoPolicyCreation();
 
 });
 

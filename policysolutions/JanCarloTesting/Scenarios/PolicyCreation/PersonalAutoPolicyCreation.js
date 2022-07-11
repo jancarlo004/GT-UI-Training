@@ -1,5 +1,4 @@
 import { AccountMenuActions } from "../../../pages/navigation/menuActions/AccountMenuActions";
-import { NewSubmission } from "../../../../ignite/previousGeneratedOutput/classFiles/policysolutions/pages/other/NewSubmission";
 import { OfferingScreen } from "../ScenarioPages/OfferingScreen";
 import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { DriverScreen } from "../ScenarioPages/DriverScreen";
@@ -7,12 +6,8 @@ import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
-import { PcfButton, PcfComponent, PcfListView } from "@gtui/gt-ui-framework";
-import { CoverageScreen } from "../ScenarioPages/CoverageScreen";
-import { takeWhile } from "lodash";
 
 const accountMenuActions = new AccountMenuActions();
-const newSubmission = new NewSubmission();
 const offeringScreen = new OfferingScreen();
 const newSubmissionWizard = new NewSubmissionWizard();
 const driverScreen = new DriverScreen();
@@ -60,6 +55,7 @@ export class PersonalAutoPolicyCreation{
         
         await t.expect(await quoteScreen.policyStatus.component.innerText).contains(policyBound);
     }
+
     async createNewVehicle(){
         
         for(let i=0; i< world.drivers.length -1; i++){ 
@@ -69,10 +65,35 @@ export class PersonalAutoPolicyCreation{
             await vehicleScreen.licenseState.selectOptionByLabel(world.licenseStateInVehicle[i]);
             await vehicleScreen.vehicleDriverAssignment.click();
             let vehicleAssignedToDrivers =  vehicleScreen.vehicleDriverAssignment.component.find('.gw-subMenu').find('.gw-label').withText(world.drivers[i]);
-            console.log(vehicleAssignedToDrivers);
             await t.click(vehicleAssignedToDrivers);
 
         }
+        
     }
+
+    //  async SelectExistingDriver(){
+    //     let existingDriverName =  driverScreen.component.find('.gw-subMenu').find('.gw-label').withText(world.accountName);
+    //         await t.click(this.addDriver.component).hover(this.addExstingDriver.component).click(existingDriverName);
+    //         await t.wait(2000);
+    //         await this.dateOfBirthForExistingDriver.setValue("08/04/1990");
+    //         await this.licenseNumberForExistingDriver.setValue("D05129922");
+    //         await this.licenseStateForExistingDriver.selectOptionByLabel("Arizona");
+    //         // await this.textInputFieldForExistingDriver("Date of Birth", "08/04/1990");
+    //         // await this.textInputFieldForExistingDriver("License #", "D05129922");
+    //         // await this.selectInputForExistingDriver("License State", "Arizona");
+    //         await this.rolesTab.click();
+    //         await t.wait(2000);
+    //         await this.licenseYear.setValue("2010");
+    //         // await this.textInputFieldForDriverScreen("Year First Licensed", "2010");
+    //         // await this.licenseYear.setValue("2010");
+    //         await t.wait(1000);
+    //         // await this.selectInputForDriverScreen("Policy Level", "0");
+    //         await this.numberOfAccidentPolicyLevel.selectOptionByLabel("0");
+    //         await this.numberOfAccidentAccountLevel.selectOptionByLabel("0");
+    //         await this.numberOfViolationsPolicyLevel.selectOptionByLabel("0");
+    //         await this.numberOfViolationsAccountLevel.selectOptionByLabel("0");
+    //         await this.addMVR();
+
+    // }
 }
 

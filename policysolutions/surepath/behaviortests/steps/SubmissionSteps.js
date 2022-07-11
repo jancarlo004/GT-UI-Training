@@ -16,3 +16,4 @@ Given(/^a Quoted Personal Auto submission$/, async function() {
   await submissionScenario.createPASubmission();
   await submissionScenario.quoteSubmission();
 });
+
