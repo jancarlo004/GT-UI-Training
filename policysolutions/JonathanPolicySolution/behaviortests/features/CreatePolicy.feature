@@ -12,7 +12,8 @@ Background:
 
     Examples:
     | Line Of Business  |  
+    | Inland Marine     | 
     | Personal Auto     |  
     | Homeowners        |  
-    | Inland Marine     |  
+     
  

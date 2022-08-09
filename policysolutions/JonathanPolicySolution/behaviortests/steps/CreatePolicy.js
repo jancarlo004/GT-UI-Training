@@ -21,13 +21,12 @@ Given(/^I Create a (.*) policy$/, async function(t, stepArguments){
 
     let LOB = stepArguments[0];
     switch(LOB){
-    //     case "Personal Auto":
-    //         await policyCreationScenario.createAutoPolicy();
-
-    // break;
-    //     case "Homeowners":
-    //         await policyCreationScenario.homePolicyCreation();
-    // break;
+        case "Personal Auto":
+            await policyCreationScenario.createAutoPolicy();
+    break;
+        case "Homeowners":
+            await policyCreationScenario.homePolicyCreation();
+    break;
         case "Inland Marine":
             await policyCreationScenario.inlandMarinePolicyCreation();
     break;

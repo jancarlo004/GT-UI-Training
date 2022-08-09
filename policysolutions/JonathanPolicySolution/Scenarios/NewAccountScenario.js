@@ -15,8 +15,8 @@ export class NewAccountScenario{
         !await accountTabBar.tabBarAccountTab.component.hasClass('gw-hasOpenSubMenu') && await t.click(accountTabBar.tabBarAccountTab.component.find('div.gw-action--expand-button'));
         await accountTabBar.accountTabAccountTab_NewAccount.click();
 
-        await newAccountScreen.firstName.setValue("Hero");
-        await newAccountScreen.lastName.setValue("Santos");
+        await newAccountScreen.firstName.setValue("Lucas");
+        await newAccountScreen.lastName.setValue("Manalasa");
         await newAccountScreen.accountSearchButton.click();
 
         if(await newAccountScreen.existingAccountLV.rowCount() !=0){

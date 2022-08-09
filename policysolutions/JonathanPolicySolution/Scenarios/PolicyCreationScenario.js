@@ -121,13 +121,44 @@ export class PolicyCreationScenario{
     }
 
 
-    async InlandMarinePolicyCreation(){
-        await createHomePolicyScreen.actionMenus.click();
-        await createHomePolicyScreen.newSubmissionMenu.click();
+    async inlandMarinePolicyCreation(){
+        let partSelectOptions = world.coveragePartSelectionOptions;
 
-        await createHomePolicyScreen.effectiveDate.setValue(await pcUtils.getDateForToday());
-        await createHomePolicyScreen.centerSection.click();
-        await createHomePolicyScreen.selectProduct("Inland Marine");
+        await createInlandMarinePolicyScreen.actionMenus.click();
+        await createInlandMarinePolicyScreen.newSubmissionMenu.click();
+        await createInlandMarinePolicyScreen.effectiveDate.setValue(await pcUtils.getDateForToday());
+        await createInlandMarinePolicyScreen.centerSection.click();
+        await createInlandMarinePolicyScreen.selectProduct("Inland Marine");
+
+        //policy info
+        await createInlandMarinePolicyScreen.organizationType.selectOptionByLabel("Common ownership");
+        await createInlandMarinePolicyScreen.submissionNextButton.click();
+
+        //coverage part selection
+        await createInlandMarinePolicyScreen.addCoveragePart();
+        await createInlandMarinePolicyScreen.submissionNextButton.click();
+
+        //buildings location
+        await createInlandMarinePolicyScreen.addNewBuildingAction();
+        await createInlandMarinePolicyScreen.submissionNextButton.click();
+
+        //accounts receivable
+        if(partSelectOptions.indexOf("Accounts Receivable") !== -1){
+            await createInlandMarinePolicyScreen.accountReceivableScreen();
+        }
+
+        //contractors equipment
+        if(partSelectOptions.indexOf("Contractors Equipment" !== -1)){
+            await createInlandMarinePolicyScreen.contractorsEquipmentScreen();
+        }
+
+        //signs
+    //     if(partSelectOptions.indexOf("Signs" !== -1)){
+    //     await createInlandMarinePolicyScreen.signsScreen();
+    //     await createInlandMarinePolicyScreen.submissionNextButton.click();
+    //     await createInlandMarinePolicyScreen.submissionQuoteButton.click();
+    //     await t.debug();
+    // }
+
     }
-
 }

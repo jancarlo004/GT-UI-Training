@@ -39,7 +39,6 @@ export class CreateHomePolicyScreen{
         await t.click(selectButton);
     }
 
-
     async doYouOccupyDwellingFullTime(radioButtonLabel, value){
         let questionLabel = this.HOPPreQaulification.component.find('td[id$=-questionText_Cell]').withExactText(radioButtonLabel);
         let yesRadioButton = questionLabel.sibling('td[id$=-BooleanRadioInput_Cell]').find('div.gw-BooleanRadioValueWidget[id$=-BooleanRadioInput]').find('.gw-label--inner').withText(value);
