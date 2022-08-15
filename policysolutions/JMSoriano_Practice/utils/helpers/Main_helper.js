@@ -1,8 +1,8 @@
 import { t } from "testcafe";
 import { PcfButton, PcfComponent, PcfListView, PcfSelectInput, PcfTextInput } from '@gtui/gt-ui-framework';
 
-export class CustomMethods{
-
+export class Main_helper{
+    
     async getDateToday(){
         var date = new Date();
         var dateToday = '';
@@ -29,30 +29,18 @@ export class CustomMethods{
         return result;
     }
 
-    //----Clouvis Teachings
-    // async setTextField(fieldname,value){
-    //     await t.typeText("element".component.find('.gw-label').withText(fieldname).sibling('div').find('input'),value);
-    // }
-
     async setTextField(element,value){
         let screenElement = PcfTextInput(element);
         await screenElement.setValue(value);
     }
 
-    //----Clouvis Teachings
-    // async selectDropdownValue(dropdownName,value){
-    //     let dropdown = "element".component.find('.gw-label').withText(dropdownName).sibling('div').find('select');
-    //     await t.click(dropdown);
-    //     await t.click(dropdown.find('option').withAttribute('value',value));
-    // }
-
     async selectDropdownValue(element,value){
-        let screenElement = PcfSelectInput(element);
+        let screenElement = PcfSelectInput('#'+element);
         await screenElement.selectOptionByValue(value);
     }
 
     async selectListViewValue(element,columnIndex,value,column_Button){
-        let screenElement = PcfListView(element);
+        let screenElement = PcfListView('#'+element);
         var givenValue = "";
         var counter = -1;
         var cellValue = "";
