@@ -14,4 +14,5 @@ When(/^I create a new account$/, async function(){
 });
 
 Then(/^account successfully created$/, async function(){
+    await accountScenarios.getAccoutInformation();
 });
