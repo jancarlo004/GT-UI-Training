@@ -1,0 +1,14 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+
+export class AgAdvantageAcceleratedMenuActions {
+	policyMenuItemSetPolicyMenuItemSet_AGALineSelection = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AGALineSelection');
+	policyMenuItemSetPolicyMenuItemSet_AGAMWModifiers = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AGAMWModifiers');
+	policyMenuItemSetPolicyMenuItemSet_Endorsements_AGA_Ext = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Endorsements_AGA_Ext');
+	policyMenuItemSetPolicyMenuItemSet_FLIMWLiability = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_FLIMWLiability');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Locations = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Locations');
+	policyMenuItemSetPolicyMenuItemSet_PRPMWProperty = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PRPMWProperty');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_PolicyInfo = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PolicyInfo');
+	policyMenuItemSetPolicyMenuItemSet_PreQualification_AGA = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PreQualification_AGA');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Pricing = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Pricing');
+	policyMenuItemSet_AgAdvantagegetId = PcfComponent('#PolicyMenuItemSet_AgAdvantage.getId()');
+}

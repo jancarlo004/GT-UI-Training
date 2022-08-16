@@ -1,7 +1,7 @@
 'use strict';
 const {Given, When, Then} = require('@cucumber/cucumber');
 import { onApp } from "../../../../pageregistry/onApp"
-import { AccountScenario } from "../../Scenarios/accountScenario";
+import { AccountScenario } from "../../Scenarios/AccountScenario";
 import { NewSubmissionScenario } from "../../Scenarios/NewSubmissionScenario";
 
 const onPCApp = new onApp ("PC");
@@ -17,7 +17,6 @@ When(/^I create Personal Account$/, async function(){
     // await accountScenario.searchExistingAccount();
 });
 
-When(/^I submit Personal Auto with 3 Drivers and 3 Vehicles$/, async function(){
-    await newSubmissionScenario.InitiateNewSubmission();
+When(/^I submit Personal Auto policy$/, async function(){
     await newSubmissionScenario.NewPASubmissionScenario();
 });

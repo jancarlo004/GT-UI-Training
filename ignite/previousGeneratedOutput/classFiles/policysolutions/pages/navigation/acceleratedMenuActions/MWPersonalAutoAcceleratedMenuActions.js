@@ -1,0 +1,12 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+
+export class MWPersonalAutoAcceleratedMenuActions {
+	policyMenuItemSetPolicyMenuItemSet_AUTDriver = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AUTDriver');
+	policyMenuItemSetPolicyMenuItemSet_AUTMWModifiers = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AUTMWModifiers');
+	policyMenuItemSetPolicyMenuItemSet_AUTMWPersonalAutoLine = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AUTMWPersonalAutoLine');
+	policyMenuItemSetPolicyMenuItemSet_AUTVehicle = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_AUTVehicle');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Endorsements_MPA_Ext = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Endorsements_MPA_Ext');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_PolicyInfo = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PolicyInfo');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Pricing = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Pricing');
+	policyMenuItemSet_MWPersonalAutogetId = PcfComponent('#PolicyMenuItemSet_MWPersonalAuto.getId()');
+}

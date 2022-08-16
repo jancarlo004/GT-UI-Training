@@ -14,6 +14,7 @@ export class RateBooks {
 	ratebooksLV_tbImportRateBook = PcfButton('#RateBooks-RateBookSearchScreen-RateBookPanelSet-RatebooksLV_tb-ImportRateBook');
 	ratebooksLV_tbMergeCheckedRateBooks = PcfButton('#RateBooks-RateBookSearchScreen-RateBookPanelSet-RatebooksLV_tb-MergeCheckedRateBooks');
 	ratebooksLV_tbRemoveCheckedRateBooks = PcfButton('#RateBooks-RateBookSearchScreen-RateBookPanelSet-RatebooksLV_tb-RemoveCheckedRateBooks');
+	ratebooksLV_tbToolbarButton = PcfButton('#RateBooks-RateBookSearchScreen-RateBookPanelSet-RatebooksLV_tb-ToolbarButton');
 	rateBookSearchDVCode = PcfTextInput('#RateBooks-RateBookSearchScreen-RateBookSearchDV-Code');
 	rateBookSearchDVEffectiveDate = PcfDateValueInput('#RateBooks-RateBookSearchScreen-RateBookSearchDV-EffectiveDate');
 	rateBookSearchDVJurisdiction = PcfSelectInput('#RateBooks-RateBookSearchScreen-RateBookSearchDV-Jurisdiction');

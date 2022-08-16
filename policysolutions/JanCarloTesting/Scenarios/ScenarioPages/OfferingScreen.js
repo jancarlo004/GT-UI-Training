@@ -3,5 +3,4 @@ import { t } from "testcafe";
 
 export class OfferingScreen{
     offeringSelection = PcfSelectInput("#SubmissionWizard-OfferingScreen-OfferingSelection"); 
-
-}
+};

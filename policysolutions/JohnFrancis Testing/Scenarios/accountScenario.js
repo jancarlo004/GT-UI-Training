@@ -1,8 +1,8 @@
 import { t } from "testcafe";
-import { AccountTabBar } from "../../../pages/navigation/tabBar/AccountTabBar";
-import { NewAccount } from "../../../pages/account/NewAccount";
-import { NewAccount_Personal } from "../../pages/customPages";
-import world from "../../util/world";
+import { AccountTabBar } from "../../pages/navigation/tabBar/AccountTabBar";
+import { NewAccount } from "../../pages/account/NewAccount";
+import { NewAccount_Personal } from "../ScenariosPages/customPages";
+import world from "../util/world";
 
 const accountTabBar = new AccountTabBar();
 const newAccount = new NewAccount();
@@ -12,8 +12,8 @@ export class AccountScenario{
     async createNewAccount(){
         await t.click(accountTabBar.tabBarAccountTab.component.find('div.gw-action--expand-button'));
         await accountTabBar.accountTabAccountTab_NewAccount.click();
-        await newAccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue(world.account.firstName);
-        await newAccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue(world.account.lastName);
+        await newAccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue(world.account.firstName[0]);
+        await newAccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue(world.account.lastName[0]);
         await newAccount.newAccountNewAccountScreenNewAccountSearchDVSearchAndResetInputSetSearchLinksInputSetSearch.click();
         await newAccount.newAccountScreenNewAccountButton.click();
         await newAccount.newAccountButtonNewAccount_Person.click();

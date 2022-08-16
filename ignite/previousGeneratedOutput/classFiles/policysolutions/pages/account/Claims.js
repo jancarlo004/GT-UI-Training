@@ -10,6 +10,7 @@ export class Claims {
 	accountFile_ClaimsAccountFileInfoBarAccountLabel = PcfButton('#AccountFile_Claims-AccountFileInfoBar-AccountLabel');
 	accountFile_ClaimsAccountFileInfoBarAccountName = PcfButton('#AccountFile_Claims-AccountFileInfoBar-AccountName');
 	accountFile_ClaimScreenAccountClaimsLV = PcfListView('#AccountFile_Claims-AccountFile_ClaimScreen-AccountClaimsLV');
+	claimDetailsCVAutoLosesLV = PcfListView('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-AutoLosesLV');
 	claimDetailsDVClaimNumber = PcfTextInput('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-ClaimNumber');
 	claimDetailsDVClaimSecurityType = PcfTextInput('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-ClaimSecurityType');
 	claimDetailsDVDescription = PcfTextInput('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-Description');
@@ -28,6 +29,9 @@ export class Claims {
 	claimDetailsDVTotalPaidLoss = PcfTextInput('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-TotalPaidLoss');
 	claimDetailsDV_tbviewInCC = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV_tb-viewInCC');
 	claimDetailsCVDetailsTitleCardTab = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-DetailsTitleCardTab');
+	claimDetailsCVPropertyLossesLV = PcfListView('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-PropertyLossesLV');
+	claimDetailsCVautoLossesTab = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-autoLossesTab');
+	claimDetailsCVpropertyLossesTab = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-ClaimDetailsCV-propertyLossesTab');
 	dateRangeForClaimSearchDateRangeForClaimSearchDirectChoice_Choice = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-DateRangeForClaimSearch-DateRangeForClaimSearchDirectChoice_Choice');
 	dateRangeForClaimSearchDateRangeForClaimSearchEndDate = PcfDateValueInput('#AccountFile_Claims-AccountFile_ClaimScreen-DateRangeForClaimSearch-DateRangeForClaimSearchEndDate');
 	dateRangeForClaimSearchDateRangeForClaimSearchRangeChoice_Choice = PcfButton('#AccountFile_Claims-AccountFile_ClaimScreen-DateRangeForClaimSearch-DateRangeForClaimSearchRangeChoice_Choice');

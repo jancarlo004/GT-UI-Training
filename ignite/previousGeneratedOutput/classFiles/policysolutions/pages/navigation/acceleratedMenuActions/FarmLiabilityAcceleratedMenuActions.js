@@ -1,0 +1,10 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+
+export class FarmLiabilityAcceleratedMenuActions {
+	policyMenuItemSetPolicyMenuItemSet_FarmLiabilityLine = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_FarmLiabilityLine');
+	policyMenuItemSet_FarmLiabilityLinePolicyMenuItemSet_FLIFarmLiabilityLine = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_FarmLiabilityLine-PolicyMenuItemSet_FLIFarmLiabilityLine');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Locations = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Locations');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_PolicyInfo = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PolicyInfo');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Pricing = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Pricing');
+	policyMenuItemSet_FarmLiabilitygetId = PcfComponent('#PolicyMenuItemSet_FarmLiability.getId()');
+}

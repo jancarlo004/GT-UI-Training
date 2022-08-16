@@ -1,0 +1,41 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+import { PcfSelectInput } from '@gtui/gt-ui-framework';
+import { PcfButton } from '@gtui/gt-ui-framework';
+
+export class ADSAnalyticsManager {
+	aDSAnalyticsManagerScreenAddSolution = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-AddSolution');
+	aDSAnalyticsManagerScreenBusinessFunctionHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-BusinessFunctionHeader');
+	aDSAnalyticsManagerScreenBusinessGroupHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-BusinessGroupHeader');
+	aDSAnalyticsManagerScreenDesriptionHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-DesriptionHeader');
+	aDSAnalyticsManagerScreenEnableCellHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-EnableCellHeader');
+	aDSAnalyticsManagerScreenLastUpdatedHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-LastUpdatedHeader');
+	aDSAnalyticsManagerScreenMoreButton = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton');
+	moreButtonADSMoreButtonMenuItemSet = PcfComponent('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet');
+	aDSMoreButtonMenuItemSetExportAll = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ExportAll');
+	aDSMoreButtonMenuItemSetImportCyenceCyber = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportCyenceCyber');
+	importCyenceCyberCyberRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportCyenceCyber-CyberRisk');
+	importCyenceCyberSMBCyberRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportCyenceCyber-SMBCyberRisk');
+	aDSMoreButtonMenuItemSetImportHazardHub = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportHazardHub');
+	importHazardHubEnhancedProperty = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportHazardHub-EnhancedProperty');
+	aDSMoreButtonMenuItemSetImportPredictiveAnalytics = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportPredictiveAnalytics');
+	importPredictiveAnalyticsSubmissionPrioritization = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportPredictiveAnalytics-SubmissionPrioritization');
+	submissionPrioritizationSubmPriorityCP = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportPredictiveAnalytics-SubmissionPrioritization-SubmPriorityCP');
+	importPredictiveAnalyticsUWExperience = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportPredictiveAnalytics-UWExperience');
+	uWExperienceUWExperienceCP = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportPredictiveAnalytics-UWExperience-UWExperienceCP');
+	aDSMoreButtonMenuItemSetImportRiskFactors = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportRiskFactors');
+	importRiskFactorsEPLRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportRiskFactors-EPLRisk');
+	importRiskFactorsGLRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportRiskFactors-GLRisk');
+	importRiskFactorsSMBRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportRiskFactors-SMBRisk');
+	importRiskFactorsWCRisk = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportRiskFactors-WCRisk');
+	aDSMoreButtonMenuItemSetImportSolution = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-MoreButton-ADSMoreButtonMenuItemSet-ImportSolution');
+	aDSAnalyticsManagerScreenProductNameHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-ProductNameHeader');
+	aDSAnalyticsManagerScreenSolutionNameHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-SolutionNameHeader');
+	aDSAnalyticsManagerScreenUpdatedByUserHeader = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-UpdatedByUserHeader');
+	aDSAnalyticsManagerScreen_ListPaging = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-_ListPaging');
+	aDSAnalyticsManagerScreen_msgs = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-_msgs');
+	aDSAnalyticsManagerScreenadsVersion = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-adsVersion');
+	aDSAnalyticsManagerScreenbusinessGroupFilter = PcfSelectInput('#ADSAnalyticsManager-ADSAnalyticsManagerScreen-businessGroupFilter');
+	aDSAnalyticsManagerADSAnalyticsManager_UpLink = PcfButton('#ADSAnalyticsManager-ADSAnalyticsManager_UpLink');
+	aDSAnalyticsManager_Paging = PcfButton('#ADSAnalyticsManager-_Paging');
+	aDSAnalyticsManager__crumb__ = PcfComponent('#ADSAnalyticsManager-__crumb__');
+}

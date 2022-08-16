@@ -10,6 +10,7 @@ export class ProfilerConfigurationPage {
 	profilerConfigurationScreenProfilerConfigLV = PcfListView('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV');
 	profilerConfigLV_tbEnableBatchProcessButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableBatchProcessButton');
 	profilerConfigLV_tbEnableGosuServletButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableGosuServletButton');
+	profilerConfigLV_tbEnableJsonRpcButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableJsonRpcButton');
 	profilerConfigLV_tbEnableMessageDestinationButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableMessageDestinationButton');
 	profilerConfigLV_tbEnableRestOperationButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableRestOperationButton');
 	profilerConfigLV_tbEnableStartablePluginButton = PcfButton('#ProfilerConfigurationPage-ProfilerConfigurationScreen-ProfilerConfigLV_tb-EnableStartablePluginButton');

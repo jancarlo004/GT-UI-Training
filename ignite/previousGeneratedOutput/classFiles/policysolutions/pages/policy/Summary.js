@@ -74,6 +74,8 @@ export class Summary {
 	policyDetailsDetailViewTileRewriteRemainderOfTerm = PcfButton('#PolicyFile_Summary-PolicyOverviewDashboard-PolicyDetailsDetailViewTile-RewriteRemainderOfTerm');
 	producerDetailViewTile_DVProducerOfRecord = PcfTextInput('#PolicyFile_Summary-PolicyOverviewDashboard-ProducerDetailViewTile-ProducerDetailViewTile_DV-ProducerOfRecord');
 	producerDetailViewTile_DVProducerOfService = PcfTextInput('#PolicyFile_Summary-PolicyOverviewDashboard-ProducerDetailViewTile-ProducerDetailViewTile_DV-ProducerOfService');
+	producerDetailViewTile_DVSecondaryProducerOfRecord = PcfTextInput('#PolicyFile_Summary-PolicyOverviewDashboard-ProducerDetailViewTile-ProducerDetailViewTile_DV-SecondaryProducerOfRecord');
+	producerDetailViewTile_DVSecondaryProducerOfService = PcfTextInput('#PolicyFile_Summary-PolicyOverviewDashboard-ProducerDetailViewTile-ProducerDetailViewTile_DV-SecondaryProducerOfService');
 	splitPolicyListViewTileSplitPolicyListViewTile_LV = PcfListView('#PolicyFile_Summary-PolicyOverviewDashboard-SplitPolicyListViewTile-SplitPolicyListViewTile_LV');
 	splitPolicyListViewTile_viewMore = PcfButton('#PolicyFile_Summary-PolicyOverviewDashboard-SplitPolicyListViewTile-_viewMore');
 	termFinancialsViewTileRecalculateLossRatio = PcfButton('#PolicyFile_Summary-PolicyOverviewDashboard-TermFinancialsViewTile-RecalculateLossRatio');

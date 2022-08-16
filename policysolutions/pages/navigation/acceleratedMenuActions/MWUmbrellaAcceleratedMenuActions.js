@@ -1,0 +1,11 @@
+import { PcfComponent } from '@gtui/gt-ui-framework';
+
+export class MWUmbrellaAcceleratedMenuActions {
+	policyMenuItemSetPolicyMenuItemSet_Endorsements_UMB_Ext = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Endorsements_UMB_Ext');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Locations = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Locations');
+	policyMenuItemSetPolicyMenuItemSet_MWUmbrellaLine = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_MWUmbrellaLine');
+	policyMenuItemSet_MWUmbrellaLinePolicyMenuItemSet_UMBUmbrella = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_MWUmbrellaLine-PolicyMenuItemSet_UMBUmbrella');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_PolicyInfo = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_PolicyInfo');
+	policyFilePolicyFileAcceleratedMenuActionsPolicyMenuItemSetPolicyMenuItemSet_Pricing = PcfComponent('#PolicyFile-PolicyFileAcceleratedMenuActions-PolicyMenuItemSet-PolicyMenuItemSet_Pricing');
+	policyMenuItemSet_MWUmbrellagetId = PcfComponent('#PolicyMenuItemSet_MWUmbrella.getId()');
+}

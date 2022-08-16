@@ -4,6 +4,8 @@ import { PcfSelectInput } from '@gtui/gt-ui-framework';
 import { PcfButton } from '@gtui/gt-ui-framework';
 
 export class DesktopSubmissions {
+	desktopSubmissionsLVADSSubmissionPriorityHeader = PcfTextInput('#DesktopSubmissions-DesktopSubmissionsScreen-DesktopSubmissionsLV-ADSSubmissionPriorityHeader');
+	desktopSubmissionsLVADSSubmissionPriorityyHeader = PcfButton('#DesktopSubmissions-DesktopSubmissionsScreen-DesktopSubmissionsLV-ADSSubmissionPriorityyHeader');
 	desktopSubmissionsLVEffectiveDateHeader = PcfButton('#DesktopSubmissions-DesktopSubmissionsScreen-DesktopSubmissionsLV-EffectiveDateHeader');
 	desktopSubmissionsLVInsuredHeader = PcfButton('#DesktopSubmissions-DesktopSubmissionsScreen-DesktopSubmissionsLV-InsuredHeader');
 	desktopSubmissionsLVIssuedHeader = PcfButton('#DesktopSubmissions-DesktopSubmissionsScreen-DesktopSubmissionsLV-IssuedHeader');

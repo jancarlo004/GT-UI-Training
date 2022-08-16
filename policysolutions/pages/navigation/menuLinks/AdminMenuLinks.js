@@ -1,6 +1,7 @@
 import { PcfComponent } from '@gtui/gt-ui-framework';
 
 export class AdminMenuLinks {
+	menuLinksAdmin_ADSAnalyticsManager = PcfComponent('#Admin-MenuLinks-Admin_ADSAnalyticsManager');
 	menuLinksAdmin_APDProductManagementPage = PcfComponent('#Admin-MenuLinks-Admin_APDProductManagementPage');
 	menuLinksAdmin_APDProductManagementProductionPage = PcfComponent('#Admin-MenuLinks-Admin_APDProductManagementProductionPage');
 	admin_BusinessSettingsBusinessSettings_ActivityPatterns = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_ActivityPatterns');
@@ -11,8 +12,11 @@ export class AdminMenuLinks {
 	admin_BusinessSettingsBusinessSettings_FormPatterns = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_FormPatterns');
 	admin_BusinessSettingsBusinessSettings_Holidays = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_Holidays');
 	admin_BusinessSettingsBusinessSettings_PolicyHolds = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_PolicyHolds');
+	admin_BusinessSettingsBusinessSettings_SPCLUEParameters = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_SPCLUEParameters');
+	admin_BusinessSettingsBusinessSettings_SPCreditParameters = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings-BusinessSettings_SPCreditParameters');
 	menuLinksAdmin_BusinessSettings = PcfComponent('#Admin-MenuLinks-Admin_BusinessSettings');
 	menuLinksAdmin_Monitoring = PcfComponent('#Admin-MenuLinks-Admin_Monitoring');
+	admin_MonitoringMonitoring_ADSErrors = PcfComponent('#Admin-MenuLinks-Admin_Monitoring-Monitoring_ADSErrors');
 	admin_MonitoringMonitoring_MessageSearch = PcfComponent('#Admin-MenuLinks-Admin_Monitoring-Monitoring_MessageSearch');
 	admin_MonitoringMonitoring_MessagingDestinationControlList = PcfComponent('#Admin-MenuLinks-Admin_Monitoring-Monitoring_MessagingDestinationControlList');
 	admin_MonitoringMonitoring_WorkflowSearch = PcfComponent('#Admin-MenuLinks-Admin_Monitoring-Monitoring_WorkflowSearch');
@@ -23,6 +27,12 @@ export class AdminMenuLinks {
 	admin_RatingRating_RateBooks = PcfComponent('#Admin-MenuLinks-Admin_Rating-Rating_RateBooks');
 	admin_RatingRating_RateRoutines = PcfComponent('#Admin-MenuLinks-Admin_Rating-Rating_RateRoutines');
 	admin_RatingRating_RateTableDefinitions = PcfComponent('#Admin-MenuLinks-Admin_Rating-Rating_RateTableDefinitions');
+	menuLinksAdmin_TestPages_Ext = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext');
+	admin_TestPages_ExtTestPages_Ext_AddressVerify = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext-TestPages_Ext_AddressVerify');
+	admin_TestPages_ExtTestPages_Ext_ClaimLossHistory = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext-TestPages_Ext_ClaimLossHistory');
+	admin_TestPages_ExtTestPages_Ext_Pods = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext-TestPages_Ext_Pods');
+	admin_TestPages_ExtTestPages_Ext_SubTerritory = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext-TestPages_Ext_SubTerritory');
+	admin_TestPages_ExtTestPages_Ext_VINLookup = PcfComponent('#Admin-MenuLinks-Admin_TestPages_Ext-TestPages_Ext_VINLookup');
 	menuLinksAdmin_UsersAndSecurity = PcfComponent('#Admin-MenuLinks-Admin_UsersAndSecurity');
 	admin_UsersAndSecurityUsersAndSecurity_AdminGroupSearchPage = PcfComponent('#Admin-MenuLinks-Admin_UsersAndSecurity-UsersAndSecurity_AdminGroupSearchPage');
 	admin_UsersAndSecurityUsersAndSecurity_AdminProducerCodeSearch = PcfComponent('#Admin-MenuLinks-Admin_UsersAndSecurity-UsersAndSecurity_AdminProducerCodeSearch');
@@ -34,15 +44,17 @@ export class AdminMenuLinks {
 	admin_UsersAndSecurityUsersAndSecurity_SearchAffinityGroup = PcfComponent('#Admin-MenuLinks-Admin_UsersAndSecurity-UsersAndSecurity_SearchAffinityGroup');
 	admin_UsersAndSecurityUsersAndSecurity_UWAuthorityProfiles = PcfComponent('#Admin-MenuLinks-Admin_UsersAndSecurity-UsersAndSecurity_UWAuthorityProfiles');
 	menuLinksAdmin_Utilities = PcfComponent('#Admin-MenuLinks-Admin_Utilities');
+	admin_UtilitiesUtilities_BMTSearch_SP_Page = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_BMTSearch_SP_Page');
+	admin_UtilitiesUtilities_BulkMortgageeTransfer_SP_Wizard = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_BulkMortgageeTransfer_SP_Wizard');
 	admin_UtilitiesUtilities_DataChangePage = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_DataChangePage');
 	admin_UtilitiesUtilities_DataFlowMasks = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_DataFlowMasks');
 	admin_UtilitiesUtilities_ExportData = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_ExportData');
-	admin_UtilitiesUtilities_ImportWizard = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_ImportWizard');
 	admin_UtilitiesUtilities_InboundFileSearch = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_InboundFileSearch');
+	admin_UtilitiesUtilities_NewBulkRestoreArchivedPolicies = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_NewBulkRestoreArchivedPolicies');
 	admin_UtilitiesUtilities_OutboundFileSearch = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_OutboundFileSearch');
 	admin_UtilitiesUtilities_Properties = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_Properties');
-	admin_UtilitiesUtilities_RestoreArchivedPoliciesInBulk = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_RestoreArchivedPoliciesInBulk');
-	utilities_RestoreArchivedPoliciesInBulkRestoreArchivedPoliciesInBulk_BulkRestoreArchivedPoliciesRestoreRecord = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_RestoreArchivedPoliciesInBulk-RestoreArchivedPoliciesInBulk_BulkRestoreArchivedPoliciesRestoreRecord');
+	admin_UtilitiesUtilities_SP_BPCAllMainPage = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_SP_BPCAllMainPage');
+	admin_UtilitiesUtilities_SP_DataImportSelect = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_SP_DataImportSelect');
 	admin_UtilitiesUtilities_ScriptParametersPage = PcfComponent('#Admin-MenuLinks-Admin_Utilities-Utilities_ScriptParametersPage');
 	adminMenuLinks = PcfComponent('#Admin-MenuLinks');
 }

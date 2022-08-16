@@ -8,6 +8,7 @@ import { PcfListView } from '@gtui/gt-ui-framework';
 export class Claims {
 	contactFile_ClaimsContactFileInfoBarContactLabel = PcfButton('#ContactFile_Claims-ContactFileInfoBar-ContactLabel');
 	contactFile_ClaimsContactFileInfoBarContactName = PcfButton('#ContactFile_Claims-ContactFileInfoBar-ContactName');
+	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVAutoLosesLV = PcfListView('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-AutoLosesLV');
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVClaimDetailsDVClaimNumber = PcfTextInput('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-ClaimNumber');
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVClaimDetailsDVClaimSecurityType = PcfTextInput('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-ClaimSecurityType');
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVClaimDetailsDVDescription = PcfTextInput('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-Description');
@@ -26,6 +27,9 @@ export class Claims {
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVClaimDetailsDVTotalPaidLoss = PcfTextInput('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV-TotalPaidLoss');
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVClaimDetailsDV_tbviewInCC = PcfButton('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-ClaimDetailsDV_tb-viewInCC');
 	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVDetailsTitleCardTab = PcfButton('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-DetailsTitleCardTab');
+	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVPropertyLossesLV = PcfListView('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-PropertyLossesLV');
+	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVautoLossesTab = PcfButton('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-autoLossesTab');
+	contactFile_ClaimsContactFile_ClaimScreenClaimDetailsCVpropertyLossesTab = PcfButton('#ContactFile_Claims-ContactFile_ClaimScreen-ClaimDetailsCV-propertyLossesTab');
 	contactFile_ClaimScreenContactClaimsLV = PcfListView('#ContactFile_Claims-ContactFile_ClaimScreen-ContactClaimsLV');
 	contactFile_ClaimsContactFile_ClaimScreenDateRangeForClaimSearchDateRangeForClaimSearchDirectChoice_Choice = PcfButton('#ContactFile_Claims-ContactFile_ClaimScreen-DateRangeForClaimSearch-DateRangeForClaimSearchDirectChoice_Choice');
 	contactFile_ClaimsContactFile_ClaimScreenDateRangeForClaimSearchDateRangeForClaimSearchEndDate = PcfDateValueInput('#ContactFile_Claims-ContactFile_ClaimScreen-DateRangeForClaimSearch-DateRangeForClaimSearchEndDate');
