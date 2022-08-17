@@ -1,4 +1,4 @@
-import { PcfButton, PcfListView, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
+import { PcfButton, PcfComponent, PcfListView, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
 
 
 export class NewSubmissionPages{
@@ -29,4 +29,8 @@ export class NewAccount_Personal{
     organization = PcfTextInput('#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-Producer');
     producerCode = PcfSelectInput('#CreateAccount-CreateAccountScreen-CreateAccountDV-ProducerSelectionInputSet-ProducerCode');
     createButton = PcfButton('#CreateAccount-CreateAccountScreen-Update');
+}
+
+export class JobComplete{
+    jobCompleteMessage = PcfComponent('#JobComplete-JobCompleteScreen-ttlBar');
 }

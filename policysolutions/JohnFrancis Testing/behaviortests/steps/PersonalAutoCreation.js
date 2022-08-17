@@ -2,7 +2,7 @@
 const {Given, When, Then} = require('@cucumber/cucumber');
 import { onApp } from "../../../../pageregistry/onApp"
 import { AccountScenario } from "../../Scenarios/AccountScenario";
-import { NewSubmissionScenario } from "../../Scenarios/NewSubmissionScenario";
+import { NewSubmissionScenario } from "../../Scenarios/PANewSubmissionScenario";
 
 const onPCApp = new onApp ("PC");
 const accountScenario = new AccountScenario();
@@ -19,4 +19,8 @@ When(/^I create Personal Account$/, async function(){
 
 When(/^I submit Personal Auto policy$/, async function(){
     await newSubmissionScenario.NewPASubmissionScenario();
+});
+
+Then(/^I issued the Personal Auto policy successfully$/, async function(){
+    await newSubmissionScenario.verifyPolicyCreated();
 });

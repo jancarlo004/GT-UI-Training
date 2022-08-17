@@ -63,9 +63,8 @@ export class CustomMethod{
             await personalAuto.personalAuto_VehicleDVCostNew_DV.setValue('60000');
             await t.pressKey('tab');
             await personalAuto.personalAuto_VehicleDVLicenseState_DV.selectOptionByValue('TX');
-            await personalAuto.driverPctLV_tbAddDriver.click();
-            await selectDriver.PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver-' + i + '-Driver')
-            let screenElement = (element);    
+            await personalAuto.driverPctLV_tbAddDriver.click(); 
+            let screenElement = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver-' + i + '-Driver');    
             await screenElement.click(); 
         }
     }
