@@ -28,6 +28,8 @@ module.exports = {
         numOfAccidents_PL: "0",
         numOfAccidents_AL: "0",
         numOfViolations_PL: "0",
-        numOfViolations_AL: "0"
-    }
+        numOfViolations_AL: "0",
+    },
+
+    LOB: ["Personal Auto", "Homeowners", "General Liability"]
 };

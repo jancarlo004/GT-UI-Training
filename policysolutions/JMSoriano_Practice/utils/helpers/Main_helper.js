@@ -29,11 +29,6 @@ export class Main_helper{
         return result;
     }
 
-    async setTextField(element,value){
-        let screenElement = PcfTextInput(element);
-        await screenElement.setValue(value);
-    }
-
     async selectDropdownValue(element,value){
         let screenElement = PcfSelectInput('#'+element);
         await screenElement.selectOptionByValue(value);
@@ -56,5 +51,10 @@ export class Main_helper{
                 await screenElement.clickOnCell(rowIndex,column_Button);
             }
         }
+    }
+
+    async getScreenComponent(element){
+        let screenElement = PcfComponent("#"+element);
+        return screenElement;
     }
 }
