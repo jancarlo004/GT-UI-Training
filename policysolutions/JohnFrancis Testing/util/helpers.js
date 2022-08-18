@@ -2,6 +2,7 @@ import { PcfButton } from "@gtui/gt-ui-framework";
 import { NewPolicyDriverPopup } from "../../pages/popup/New/NewPolicyDriverPopup";
 import { PersonalAuto } from "../../pages/lOBWizardStepGroup/PersonalAuto";
 import { NewSubmissionPages } from "../ScenariosPages/customPages";
+import { SearchTabBar } from "../ScenariosPages/searchTabBarPages";
 
 import { t } from "testcafe";
 import world from "../util/world";
@@ -9,13 +10,9 @@ import world from "../util/world";
 const newSubmissionPages = new NewSubmissionPages();
 const personalAuto = new PersonalAuto();
 const newPolicyDriverPopup = new NewPolicyDriverPopup();
-
+const searchTabBar = new SearchTabBar();
 
 export class CustomMethod{
-    async selectDriver(element){
-  
-    }
-
     async createNewDriver(numberOfDriversToBeCreated){
         for (let i = 1; i <= numberOfDriversToBeCreated; i++) {
             await personalAuto.driversLV_tbAddDriver.click();
@@ -67,5 +64,10 @@ export class CustomMethod{
             let screenElement = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver-' + i + '-Driver');    
             await screenElement.click(); 
         }
+    }
+
+    async clickSearchTab(section){
+        await t.click(searchTabBar.tabBarSearch.component.find('div.gw-action--expand-button'));
+        await t.click(searchTabBar.tabBarSearch.component.find('.gw-label').withText(section));
     }
 }

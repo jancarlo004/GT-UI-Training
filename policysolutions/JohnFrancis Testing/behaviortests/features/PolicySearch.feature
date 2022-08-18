@@ -5,11 +5,11 @@ Background: Producer Role
 
 @policy_search
 Scenario: Searching policies in each Line of Business
-    Given I have <Line of Businesses> policies
-    When I search for policies
-    Then The policies that match the search criteria is present
+    When I search for <Line of Business> policies
+    # Then The policies that match the search criteria is present
 
-    | Line of Businesses |
-    | Personal Auto      |
-    | Property           |
-    | Inland Marine      | 
+    Examples:
+    | Line of Business |
+    | Personal Auto    |
+    | Property         |
+    | Inland Marine    | 
