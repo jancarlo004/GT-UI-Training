@@ -1,6 +1,5 @@
 @pc_searchpolicies
 Feature: Policy search in PC
-
 Background: 
     Given I am a user with a Producer Role
 
