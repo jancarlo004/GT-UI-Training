@@ -15,3 +15,7 @@ Given(/^I am a user with the Producer role$/, async function(){
 When(/^I search for (.*) policies$/, async function(t, stepArguments){
     await searchPolicy.searchPolicy(stepArguments);
 });
+
+Then(/The policies that match the search criteria is present$/, async function(){
+    await searchPolicy.verifySearchResults();
+});

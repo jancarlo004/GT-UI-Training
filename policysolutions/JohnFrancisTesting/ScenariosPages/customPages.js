@@ -34,3 +34,7 @@ export class NewAccount_Personal{
 export class JobComplete{
     jobCompleteMessage = PcfComponent('#JobComplete-JobCompleteScreen-ttlBar');
 }
+
+export class SearchResults{
+    searchResultListView = PcfListView('#PolicySearch-PolicySearchScreen-DatabasePolicySearchPanelSet-PolicySearch_ResultsLV');
+}

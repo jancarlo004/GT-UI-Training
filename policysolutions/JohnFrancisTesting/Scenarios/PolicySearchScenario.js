@@ -1,10 +1,13 @@
 import { CustomMethod } from "../util/helpers";
 import { PolicySearch } from "../../pages/search/PolicySearch";
+import { SearchResults } from "../ScenariosPages/customPages";
 import world from "../util/world";
+import { t } from "testcafe";
 
 
 const helpers = new CustomMethod();
 const policySearch = new PolicySearch();
+const searchResults = new SearchResults();
 
 export class PolicySearchScenario{
 
@@ -35,6 +38,6 @@ export class PolicySearchScenario{
     }
 
     async verifySearchResults(){
-      
+      await t.expect(await searchResults.searchResultListView.rowCount()).gt(0);
     }
 }

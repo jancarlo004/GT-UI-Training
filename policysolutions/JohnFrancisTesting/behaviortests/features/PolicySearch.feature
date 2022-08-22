@@ -6,7 +6,7 @@ Background: Producer Role
 @policy_search
 Scenario: Searching policies in each Line of Business
     When I search for <Line of Business> policies
-    # Then The policies that match the search criteria is present
+    Then The policies that match the search criteria is present
 
     Examples:
     | Line of Business |
