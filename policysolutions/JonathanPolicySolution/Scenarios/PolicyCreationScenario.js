@@ -29,10 +29,10 @@ export class PolicyCreationScenario{
         //qualifications
         await createAutoPolicyScreen.newSubmissionIsTheApplicantCurrentlyInsured.selectOptionByLabel("Yes");
         await createAutoPolicyScreen.newSubmissionNextButton.click();
- 
+        
         //policy info
         await createAutoPolicyScreen.newSubmissionNextButton.click();
- 
+        
         //add drivers
         await createAutoPolicyScreen.selectExistingDriver();
         await createAutoPolicyScreen.newSubmissionDob.setValue("05/01/1990");
@@ -140,17 +140,21 @@ export class PolicyCreationScenario{
 
         //buildings location
         await createInlandMarinePolicyScreen.addNewBuildingAction();
+        await createInlandMarinePolicyScreen.newBuildingDesc.setValue("Building1");
+        await createInlandMarinePolicyScreen.newBuildingUpdateButton.click();
         await createInlandMarinePolicyScreen.submissionNextButton.click();
 
         //accounts receivable
         if(partSelectOptions.indexOf("Accounts Receivable") !== -1){
-            await createInlandMarinePolicyScreen.accountReceivableScreen();
+            await createInlandMarinePolicyScreen.accountReceivableScreen("Manufacturer", "80%", "Testing", "1");
+            await createInlandMarinePolicyScreen.addAccntsResCov("1: 85008, Phoenix, AZ / 1: Building1", "UL Class A", "50% or less", "1");
+            
         }
 
         //contractors equipment
-        if(partSelectOptions.indexOf("Contractors Equipment" !== -1)){
-            await createInlandMarinePolicyScreen.contractorsEquipmentScreen();
-        }
+        // if(partSelectOptions.indexOf("Contractors Equipment" !== -1)){
+        //     await createInlandMarinePolicyScreen.contractorsEquipmentScreen();
+        // }
 
         //signs
     //     if(partSelectOptions.indexOf("Signs" !== -1)){
@@ -159,6 +163,15 @@ export class PolicyCreationScenario{
     //     await createInlandMarinePolicyScreen.submissionQuoteButton.click();
     //     await t.debug();
     // }
+
+        //risk analysis
+        await createInlandMarinePolicyScreen.submissionNextButton.click();
+        
+         //quote to issue policy
+         await createInlandMarinePolicyScreen.submissionQuoteButton.click();
+         await createInlandMarinePolicyScreen.bindOptionsButton.click();
+         await createInlandMarinePolicyScreen.issuePolicyButton.click();
+         world.policyNumber = await createInlandMarinePolicyScreen.newPolicyNumber.component.find('.gw-infoValue').innerText;
 
     }
 }

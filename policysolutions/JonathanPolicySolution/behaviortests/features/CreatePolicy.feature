@@ -7,13 +7,13 @@ Background:
   Scenario: Create a <Line Of Business> policy
 
     Given I Create a <Line Of Business> policy
-    # When I Search the Policy
-    # Then I View the Policy
+    When I Search the Policy
+    Then I View the Policy
 
     Examples:
     | Line Of Business  |  
-    | Inland Marine     | 
     | Personal Auto     |  
+    | Inland Marine     | 
     | Homeowners        |  
      
  

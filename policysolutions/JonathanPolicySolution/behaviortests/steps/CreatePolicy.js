@@ -4,11 +4,15 @@ import {t} from 'testcafe';
 import { onApp } from '../../../../pageregistry/onApp';
 import { NewAccountScenario } from "../../Scenarios/NewAccountScenario";
 import { PolicyCreationScenario } from '../../Scenarios/PolicyCreationScenario';
+import { SearchPolicyScenario } from '../../Scenarios/SearchPolicyScenario';
+import { ViewPolicyScenario } from '../../Scenarios/ViewPolicyScenario';
 
 const { Given, When, Then } = require("@cucumber/cucumber");
 const onPCApp = new onApp("PC");
 const newAccountScenario = new NewAccountScenario();
 const policyCreationScenario = new PolicyCreationScenario();
+const searchPolicyScenario = new SearchPolicyScenario();
+const viewPolicyScenario = new ViewPolicyScenario();
 
 
 Given(/^I logged in Policy Center$/, async function(){
@@ -35,9 +39,9 @@ Given(/^I Create a (.*) policy$/, async function(t, stepArguments){
 });
 
 When(/^I Search the Policy$/, async function(){
-    // await policySearch.searchPolicy();
+    await searchPolicyScenario.searchPolicy();
 });
 
-// Then(/^I View the Policy$/, async function(){
-//     // await policySearch.verifyPolicyExists();
-// });
+Then(/^I View the Policy$/, async function(){
+    await viewPolicyScenario.viewPolicySummary();
+});
