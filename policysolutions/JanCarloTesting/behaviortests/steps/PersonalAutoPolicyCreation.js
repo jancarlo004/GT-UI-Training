@@ -18,8 +18,8 @@ const accountCreationWithChallenge = new AccountCreationWithChallenge();
 const autoPolicyCreationWithChallenge = new AutoPolicyWithChallenge();
 
 Given(/^I create a Personal Auto Policy$/, async function(){
-    await accountCreationWithChallenge.accountCreationWithChallenge();
-    await autoPolicyCreationWithChallenge.autoPolicyCreation();
+    await accountCreation.CreatePersonalAccount();
+    await personalAutoPolicyCreation.personalAutoPolicyCreation();
 
 });
 

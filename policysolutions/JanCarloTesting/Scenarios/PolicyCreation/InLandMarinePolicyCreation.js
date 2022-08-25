@@ -40,6 +40,5 @@ export class InLandMarinePolicyCreation {
     async verifyInlanMarinePolicyCreated(){
         let result = "Submission (Bound)";
         await t.expect(await inlandMarinePages.submissionBoundLabel.component.innerText).contains(result);
-
     }
 }
