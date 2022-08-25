@@ -17,8 +17,8 @@ export class AccountCreation{
     await accountTab.tabBarAccountTab.click();
     !await accountTab.tabBarAccountTab.component.hasClass('gw-hasOpenSubMenu') && await t.click(accountTab.tabBarAccountTab.component.find('div.gw-action--expand-button'));
     await accountTab.accountTabAccountTab_NewAccount.click();
-    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("Aemie");
-    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("Tort");
+    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("JM");
+    await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("De Guzmans");
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVSearchAndResetInputSetSearchLinksInputSetSearch.click();
     await t.wait(1000);
 
