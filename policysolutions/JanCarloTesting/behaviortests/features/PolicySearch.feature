@@ -4,7 +4,7 @@ Background:
     Given I logged in Policy Center
 
 @PolicySearch
-  Scenario: Searching for a <Line Of Business> policy
+  Scenario Outline: Searching for a <Line Of Business> policy
 
     Given a <Line Of Business> policy
     When I search for the policy 

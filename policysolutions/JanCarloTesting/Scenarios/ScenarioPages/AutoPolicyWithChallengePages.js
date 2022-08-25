@@ -37,16 +37,21 @@ export class AutoPolicyWithChallengePages{
     async offeringScreenNextButton(nextButton){
         await t.click(this.offeringSelection.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
     }
+
     async qualificationScreenNextButton(nextButton){
         await t.click(this.qualificationScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
     }
+
     async policyInfoScreenNextButton(nextButton){
         await t.click(this.policyInfoScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
     }
+
     async SelectExistingDriver(){
         let existingDriverName =  this.addButton.component.find('.gw-subMenu').find('.gw-label').withText(world.accountName);
             await t.click(this.addButton.component).hover(this.existingContact.component).click(existingDriverName);
             await t.wait(2000);
+            // await this.textInputFieldForCreatedDriver("License #",world.licenseNumber);
+            // await this.selectInputFieldForCreatedDriver("License State",world.licenseState);
             await this.addMVR();
     }
 
@@ -76,18 +81,19 @@ export class AutoPolicyWithChallengePages{
             await this.selectNumberOfViolations('td[id$=-DriverNumberOfViolations_Cell]',world.numberOfViolationsAccountLevel[i]);
             await this.addMVR();
             await this.storeDriverName();
-
         }
     }
+
     async textInputFieldForCreatedDriver(textFieldName, value){
         await t.typeText(this.newDriverScreen.component.find('.gw-label').withExactText(textFieldName).sibling('div').find('input'), value);
     }
+
     async selectInputFieldForCreatedDriver(selectInputName, selectInputOptionValue){
         let dropdownElements = this.newDriverScreen.component.find('.gw-label').withExactText(selectInputName).sibling('div').find('select');
         await t.click(dropdownElements);
         await t.click(dropdownElements.find('option').withText(selectInputOptionValue));
-
     }
+
     async clickOkButton(okButton){
         await t.click(this.newDriverScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(okButton));
     }
@@ -152,7 +158,6 @@ async createNewVehicle(){
         let addDriverButton = this.vehicleScreen.component.find('div.gw-AddButtonWidget[id$=-AddDriver]').find('.gw-label').withText("Add");
         await t.click(addDriverButton);
         await t.click(addDriverButton.parent('div').sibling('div.gw-subMenu').find('.gw-label').withExactText(world.drivers[i]));
-
     }
 }
 async textInputFieldForCreateVehicle(textFieldName, value){
@@ -167,6 +172,7 @@ async selectInputFieldForCreateVehicle(selectInputName, selectInputOptionValue){
 async vehicleScreenNextButton(nextButton){
     await t.click(this.vehicleScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
 }
+
 async coverageScreenNextButton(nextButton){
     await t.click(this.coverageScreen.component.parent('div').prevSibling('div').find('.gw-label').withText(nextButton));
 }
@@ -176,6 +182,5 @@ async quoteScreenIssuePolicy(nextButton){
     await t.click(bindOptionsButton);
     await this.issuePolicy.click();
     world.policyNumber = await quoteScreen.policyNumberLabel.component.find('.gw-infoValue').innerText;
-
     }
 }
