@@ -1,0 +1,36 @@
+module.exports = {
+    contact: {
+        firstName: "Lloyd",
+        lastName: "Tagami",
+        name: "",
+        taxID: ""
+    },
+    contactType: "Person",
+    accountNumber: "4850559131", //Lloyd Tagami    
+    dateofbirth: "12/09/1991",
+    maritalstatus: "Single",
+    primaryphone: "Home",
+    homephone: "201-555-1234",
+    workphone: "",
+    mobilephone: "",
+    faxphone: "",
+    primaryemail: "lloyd@mail.com",
+    secondaryemail: "lloyd2@mail.com",
+    accountnickname: "lloyd",
+    servicetier: "",
+    country:"United States",
+    address1: "1234 Hillsdale Blvd",
+    addresss2: "",
+    address3: "",
+    city: "Foster City",
+    county: "San Mateo",
+    state: "California",
+    zipcode: "94404",
+    addresstype: "Home",
+    description: "testing",
+    SSN: "666348720",
+    vehicleVin: "WDDHF8JB3CA549096",
+    LOB: "Personal Auto",
+    ExistingAccountNumber: "8837559564",
+    ExistingAccountName: "James Reid"
+};
