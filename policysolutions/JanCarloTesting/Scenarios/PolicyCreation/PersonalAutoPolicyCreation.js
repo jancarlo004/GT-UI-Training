@@ -58,7 +58,7 @@ export class PersonalAutoPolicyCreation{
 
     async createNewVehicle(){
         
-        for(let i=0; i< world.drivers.length -1; i++){ 
+        for(let i=0; i< world.driverFirstName.length -1; i++){ 
             await vehicleScreen.createVehicleButton.click();
             await vehicleScreen.vehicleVin.setValue(world.newVehicleVin[i]);
             await vehicleScreen.costNew.setValue(world.costNew[i]);

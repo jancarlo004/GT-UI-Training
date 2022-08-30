@@ -51,16 +51,14 @@ export class PAClaimCreations{
     }
 
     async createAutoBodyRepairShopButton(){
-<<<<<<< HEAD
-        await t.hover(this.newVendor.component)
-               .click(this.autoBodyrepairShop.component);
-=======
+
+
         await t.hover(this.newVendor.component).click(this.autoBodyrepairShop.component);
         await this.autoRepairShopName.setValue("JCM Auto Repair Shop");
         await this.autoRepairShopUpdateButton.click();
         await t.wait(1000);
         await this.submitButton.click();
->>>>>>> 857b05d5ced8a75cb887545183f4eb1a5e1a64fc
+
     }
 }
 

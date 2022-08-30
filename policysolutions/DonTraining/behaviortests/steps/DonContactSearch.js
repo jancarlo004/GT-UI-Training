@@ -13,7 +13,7 @@ Given(/^a known (.*)$/, async function(t, stepArguments) {
     if(contactType == "Person"){
         await donScenariosContacts.createNewPerson();
     }else {
-       // await donScenariosContacts.createNewCompany();
+        // await donScenariosContacts.createNewCompany();
     }
 
 });
