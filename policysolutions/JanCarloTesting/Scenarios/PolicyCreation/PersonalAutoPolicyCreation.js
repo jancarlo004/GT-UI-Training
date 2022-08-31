@@ -4,6 +4,7 @@ import { NewSubmissionWizard } from "../ScenarioPages/NewSubmissionWizard";
 import { DriverScreen } from "../ScenarioPages/DriverScreen";
 import { VehicleScreen } from "../ScenarioPages/VehicleScreen";
 import { QuoteScreen } from "../ScenarioPages/QuoteScreen";
+import { UWIssueScreen } from "../ScenarioPages/UWIssueScreen";
 import { t } from "testcafe";
 import world from "../../util/world";
 
@@ -13,6 +14,7 @@ const newSubmissionWizard = new NewSubmissionWizard();
 const driverScreen = new DriverScreen();
 const vehicleScreen = new VehicleScreen();
 const quoteScreen = new QuoteScreen();
+const underWritingIssueScreen = new UWIssueScreen();
 
 export class PersonalAutoPolicyCreation{
 
@@ -66,9 +68,7 @@ export class PersonalAutoPolicyCreation{
             await vehicleScreen.vehicleDriverAssignment.click();
             let vehicleAssignedToDrivers =  vehicleScreen.vehicleDriverAssignment.component.find('.gw-subMenu').find('.gw-label').withText(world.drivers[i]);
             await t.click(vehicleAssignedToDrivers);
-
-        }
-        
+        } 
     }
 
     //  async SelectExistingDriver(){
@@ -93,7 +93,6 @@ export class PersonalAutoPolicyCreation{
     //         await this.numberOfViolationsPolicyLevel.selectOptionByLabel("0");
     //         await this.numberOfViolationsAccountLevel.selectOptionByLabel("0");
     //         await this.addMVR();
-
     // }
 }
 

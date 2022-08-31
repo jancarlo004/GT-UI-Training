@@ -37,9 +37,10 @@ export class PAClaimCreation{
         let claimCreated = "New Claim Saved";
         await t.expect(await paClaimCreation.claimCreated.component.innerText).contains(claimCreated);
     }
+    
     async exposureAndReserveCreation(){
         await paClaimCreation.claimMenuActions.click();
-        await paClaimCreation.getCollisionExposure();
+        await paClaimCreation.getCollisionExposure("Comprehensive");
 
         let insuredName = await paClaimCreation.insuredName.component.find('.gw-infoValue').innerText;
         
@@ -66,8 +67,8 @@ export class PAClaimCreation{
 
         await paClaimCreation.saveButton.click();
         await t.wait(1000);
-
     }
+
     async verifyReserveIsCreated(){
        await t.expect(await paClaimCreation.financialListView.rowCount()).gt(0);
    

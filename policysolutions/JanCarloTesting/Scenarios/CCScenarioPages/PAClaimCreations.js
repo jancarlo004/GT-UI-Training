@@ -19,7 +19,7 @@ export class PAClaimCreations{
     finishButton = PcfButton("#FNOLWizard-Finish");
     claimCreated = PcfComponent("#NewClaimSaved-NewClaimSavedScreen-ttlBar");
     claimSaveLink = PcfButton("#NewClaimSaved-NewClaimSavedScreen-NewClaimSavedDV-GoToClaim");
-    claimMenuActions = PcfButton("#Claim-ClaimMenuActions");
+    claimMenuActions = PcfComponent("#Claim-ClaimMenuActions");
     collision = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType-0-item-0-item");
     coverageType = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType");
     cLabel = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType-0-item");
@@ -45,9 +45,13 @@ export class PAClaimCreations{
     autoRepairShopName = PcfTextInput("#NewContactPopup-ContactDetailScreen-ContactBasicsDV-OrganizationName-GlobalContactNameInputSet-Name");
     autoRepairShopUpdateButton = PcfButton("#NewContactPopup-ContactDetailScreen-ContactBasicsDV_tb-ContactDetailToolbarButtonSet-CustomUpdateButton");
     submitButton = PcfButton("#NewServiceRequest-SubmitButton");
+    covTypeParent = PcfComponent("#Claim-ClaimMenuActions-ClaimMenuActions_NewExposure-NewExposureMenuItemSet-NewExposureMenuItemSet_ByCoverageType");
 
-    async getCollisionExposure(){
-        await t.hover(this.coverageType.component).hover(this.cLabel.component).click(this.collision.component);
+    async getCollisionExposure(exposures){
+
+        let chooseByCovType1 = this.covTypeParent.component.find('div.gw-MenuItemWidget[id$=-item').withText("C");
+        let exposure1 = chooseByCovType1.find('div.gw-MenuItemWidget[id$=-item').withText(exposures);
+        await t.hover(this.covTypeParent.component).hover(chooseByCovType1).click(exposure1);
     }
 
     async createAutoBodyRepairShopButton(){
