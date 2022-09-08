@@ -244,4 +244,87 @@ export class SubmissionScenario {
         console.log("# of forms row = " + formsRows)
         await t.expect(await newFormsScreen.formsDetailViewListView.rowCount()).eql(0);
     }
+
+    async CreateWorkersCompensation() {
+        await accountMenuActions.accountFileAccountFileMenuActions.click();
+        await accountMenuActions.accountFileMenuActions_CreateAccountFileMenuActions_NewSubmission.click();        
+        await newSubmissionScreen.selectProduct("Workers' Compensation");
+    }
+
+    async WCPreQualificationRadioButton(table) {        
+        let count = table.length - 1;
+        for (let i = 0; i <= count; i++) {           
+            let question = table[i][0];
+            let answer = table[i][1];          
+            let questioncell = qualifications.PreQualification.component.find('td[id$=-questionText_Cell]').withExactText(question);
+            let rdnAnswerCell = questioncell.sibling('td[id$=-BooleanRadioInput_NoPost_Cell]').find('div.gw-BooleanRadioValueWidget[id$=-BooleanRadioInput_NoPost]').find('.gw-label--inner').withExactText(answer);          
+            await t.click(rdnAnswerCell);                                                       
+        }        
+    }
+
+    async WCProcess() {
+        await nextSubmissionWizard.submissionWizardNext.click();
+        await nextSubmissionWizard.submissionWizardNext.click();
+        await nextSubmissionWizard.submissionWizardNext.click();
+        await this.WCCoverages();      
+        await nextSubmissionWizard.submissionWizardNext.click();
+    }
+
+    async WCSupplemental(table) {
+        let count = table.length - 1;         
+        if (count > 0) {
+            await this.WCSupplementalMixAnswer(table);            
+        }
+        else {
+            await this.WCSupplementDefaultAnswer(table);
+        }
+
+    }
+
+    async WCSupplementDefaultAnswer(table) {        
+        let supplementalLvw = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-WorkersCompSupplementalScreen-QuestionSetsDV-0-QuestionSetLV');
+        let count = world.WCSuplemental.SupplementalQuestions.length - 1;
+        let answer = table[0][1];        
+        for (let i=0; i <= count; i++) {
+            let question = world.WCSuplemental.SupplementalQuestions[i];
+            let questioncell = supplementalLvw.component.find('td[id$=-questionText_Cell]').withText(question);
+            let rdnAnswerCell = questioncell.sibling('td[id$=-BooleanRadioInput_NoPost_Cell]').find('div.gw-BooleanRadioValueWidget[id$=-BooleanRadioInput_NoPost]').find('.gw-label--inner').withExactText(answer);
+            await t.click(rdnAnswerCell);
+        }        
+    }
+
+    async WCSupplementalMixAnswer(table) {
+        console.log("WCSupplementalMixAnswer method: " + table)
+        let supplementalLvw = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-WorkersCompSupplementalScreen-QuestionSetsDV-0-QuestionSetLV');
+        let count = table.length - 1;                
+        for (let i=0; i <= count; i++) {            
+            let question = table[i][0];
+            let answer = table[i][1];
+            let questioncell = supplementalLvw.component.find('td[id$=-questionText_Cell]').withText(question);
+            let rdnAnswerCell = questioncell.sibling('td[id$=-BooleanRadioInput_NoPost_Cell]').find('div.gw-BooleanRadioValueWidget[id$=-BooleanRadioInput_NoPost]').find('.gw-label--inner').withExactText(answer);
+            await t.click(rdnAnswerCell);
+        }
+    }
+
+    async WCPreQualificationTextField(table) {        
+        let count = table.length - 1;
+        for (let i = 0; i <= count; i++) {            
+            let question = table[i][0];
+            let answer = table[i][1];          
+            let questioncell = qualifications.PreQualification.component.find('td[id$=-questionText_Cell]').withExactText(question);          
+            let txtAnswercell = questioncell.sibling('td[id$=-IntegerFieldInput_NoPost_Cell]').find('div.gw-TextValueWidget[id$=-IntegerFieldInput_NoPost]');        
+            await t.typeText(txtAnswercell,answer);                                                                        
+          }        
+    }
+
+    async WCCoverages() {
+        let locationdropdown = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-WorkersCompCoverageConfigScreen-WorkersCompCoverageCV-WorkersCompClassesInputSet-WCCovEmpLV-0-Loc');
+        let classcode = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-WorkersCompCoverageConfigScreen-WorkersCompCoverageCV-WorkersCompClassesInputSet-WCCovEmpLV-0-ClassCode');
+        let basis = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-WorkersCompCoverageConfigScreen-WorkersCompCoverageCV-WorkersCompClassesInputSet-WCCovEmpLV-0-AnnualRenum');
+        workerscomp.submissionWizardLOBWizardStepGroupLineWizardStepSetWorkersCompCoverageConfigScreenWorkersCompCoverageCVWorkersCompClassesInputSetWCCovEmpLV_tbAdd.click();
+        await locationdropdown.selectOptionByLabel('1: 250 W 10th AVE, Phoenix, AZ');
+        await classcode.setValue('0005')
+        await t.pressKey('tab');
+        await basis.setValue('1000');
+    }
 }
