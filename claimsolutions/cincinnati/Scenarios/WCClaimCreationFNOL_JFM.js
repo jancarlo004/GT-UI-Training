@@ -3,23 +3,31 @@ import { WCClaimCreationFNOLPages_JFM } from "../ScenarioPages/WCClaimCreationFN
 import { ClaimTabBar } from "../../pages/navigation/tabBar/ClaimTabBar";
 import { FNOLWizard } from "../../pages/claim/FNOLWizard";
 import world from "../utils/world";
+import { Helper } from "../utils/helpers";
 
 const wcClaimCreationFNOLPages = new WCClaimCreationFNOLPages_JFM();
 const claimTabBar = new ClaimTabBar();
 const fNOLWizard = new FNOLWizard();
+const helper = new Helper();
 
 export class WCClaimCreationFNOL{
     async claimCreationFNOL(){
-        await t.click(wcClaimCreationFNOLPages.claimsTab.component.find('div.gw-action--expand-button'));
-        await claimTabBar.claimTabClaimTab_FNOLWizard.click();
-        await fNOLWizard.fNOLWizardFNOLWizard_FindPolicyScreenFNOLWizardFindPolicyPanelSetGlobalContactNameInputSetName.setValue("Sample WorkersComp");
-        await fNOLWizard.fNOLWizardFindPolicyPanelSetSearch.click();
-        await t.click(wcClaimCreationFNOLPages.fNOLWizardFindPolicyPanelSetClaim_LossDate.component.find('div.gw-min-visible gw-date-icon'));
-    }
+        //Start New Claim
+        await wcClaimCreationFNOLPages.newClaim();
 
-    // async selectExistingPolicy(){
-    //     let searchedPolicy = fNOLWizard.fNOLWizardFindPolicyPanelSetPolicyResultLV.component.find('td[id$=-PolicyNumber_Cell').withExactText(world.policyNumber);
-    //     let selectButton = searchedPolicy.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-selectButton]');
-    //     await t.click(selectButton);
-    // }
+        //Step 1: Search or Create Policy
+        await wcClaimCreationFNOLPages.searchOrCreatePolicy("Sample WorkersComp", "09/04/2022");
+        await fNOLWizard.fNOLWizardNext.click();
+
+        //Step 2 of 4: Basic information
+        await fNOLWizard.fNOLWizard_BasicInfoScreenClaim_LocationCode.selectNthOption(1);
+        await wcClaimCreationFNOLPages.addNewPerson();
+        await fNOLWizard.fNOLWizard_BasicInfoScreenClaim_ReportedByType.selectOptionByLabel("Employee");
+        await wcClaimCreationFNOLPages.addInjuredWorker();
+        await fNOLWizard.fNOLWizardNext.click();
+
+        //Step 3 of 4: Step 3 of 4: Add claim information
+        await helper.radioButtonSelect(fNOLWizard.fNOLWizard_NewLossDetailsScreenInjurySeverity_TimeLossReport, "No");
+        await t.debug();
+    }
 }
