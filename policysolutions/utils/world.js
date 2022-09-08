@@ -5,6 +5,15 @@ module.exports = {
         name: "",
         taxID: ""
     },
+    WCSuplemental: {
+        SupplementalQuestions: ['Any employees under 16 or over 60 years of age?','Does applicant own, operate, or lease aircraft/watercraft?', 'Are athletic teams sponsored?',
+    'Are employee health plans provided?','Any work performed underground or above 15 feet?','Any group transportation provided?','Any employees with physical handicaps?',
+    'Do/Have past, present, or discontinued operations involve(d) storing, treating, discharging, applying, disposing or transporting of hazardous material? (e.g. landfills, wastes, fuel tanks, etc)',
+    'Is there a labor interchange with any other business/subsidiary?','Do you lease employees to or from other employers?','Is applicant engaged in any other type of business?',
+    'Any other insurance with this insurer','Do employees travel out of state?','Any work performed on barges, vessels, docks, bridge over water?','Are physicals required after offers of employment are made?',
+    'Any prior coverage declined/canceled/non-renewed (last 3 years)? Not Applicable in MO.','Is a written safety program in operation?','Any seasonal employees?','Are sub-contractors used? (If yes, give % of work subcontracted)',
+    'Any tax liens or bankruptcy within the last 5 years?','Any undisputed and unpaid workers','Is there any volunteer or donated labor?','Do any employees predominantly work at home?','Any work sublet without certificates of ins.?']      
+    },
     contactType: "Person",
     accountNumber: "4850559131", //Lloyd Tagami    
     dateofbirth: "12/09/1991",
