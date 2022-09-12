@@ -28,6 +28,6 @@ export class WCClaimCreationFNOL{
 
         //Step 3 of 4: Step 3 of 4: Add claim information
         await helper.radioButtonSelect(fNOLWizard.fNOLWizard_NewLossDetailsScreenInjurySeverity_TimeLossReport, "No");
-        await t.debug();
+        await helper.dateAndTime('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-DateReportedtoEmployer', "09/04/2022", "12:00")       
     }
 }

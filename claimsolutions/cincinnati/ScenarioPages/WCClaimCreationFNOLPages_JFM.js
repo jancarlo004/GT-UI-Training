@@ -35,7 +35,7 @@ export class WCClaimCreationFNOLPages_JFM{
         await this.optionsReportedBy.click();
         await fNOLWizard.fNOLWizardFullWizardStepSetFNOLWizard_BasicInfoScreenReportedBy_NameClaimNewPersonOnlyPickerMenuItemSetClaimNewPersonOnlyPickerMenuItemSet_NewPersonMenuItem.click();
         await newContact.newContactPopupContactDetailScreenContactBasicsDVPersonNameInputSetGlobalPersonNameInputSetFirstName.setValue(world.NewFirstName[1]);
-        await newContact.newContactPopupContactDetailScreenContactBasicsDVPersonNameInputSetGlobalPersonNameInputSet.LastName.setValue(world.NewLastName[1]);
+        await newContact.newContactPopupContactDetailScreenContactBasicsDVPersonNameInputSetGlobalPersonNameInputSetLastName.setValue(world.NewLastName[1]);
         await newContact.newContactPopupContactDetailScreenContactBasicsDVAdditionalInfoInputSetTaxID.setValue("321-45-6547");
         await newContact.newContactPopupContactDetailScreenContactBasicsDV_tbContactDetailToolbarButtonSetCustomUpdateButton.click();
     }
