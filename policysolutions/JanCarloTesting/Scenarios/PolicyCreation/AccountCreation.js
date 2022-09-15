@@ -17,16 +17,16 @@ export class AccountCreation{
     await accountTab.tabBarAccountTab.click();
     !await accountTab.tabBarAccountTab.component.hasClass('gw-hasOpenSubMenu') && await t.click(accountTab.tabBarAccountTab.component.find('div.gw-action--expand-button'));
     await accountTab.accountTabAccountTab_NewAccount.click();
-<<<<<<< HEAD
+
 
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("Don");
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("Snow");
 
 
-=======
+
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetFirstName.setValue("Aemie");
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVGlobalPersonNameInputSetLastName.setValue("Tort");
->>>>>>> bb56c690ac3e9b598ee61764c43bde76d92cad6f
+
     await newaccount.newAccountNewAccountScreenNewAccountSearchDVSearchAndResetInputSetSearchLinksInputSetSearch.click();
     await t.wait(1000);
 

@@ -1,4 +1,4 @@
-   import { PcfButton, PcfComponent, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
+import { PcfButton, PcfComponent, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
 import { t } from "testcafe";
 
 export class AutoPolicyPages{

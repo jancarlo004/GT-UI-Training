@@ -20,6 +20,7 @@ export class AutoPolicyScenario{
         await autopolicypages.licenseState.selectOptionByLabel("Arizona");
         await autopolicypages.ssn.setValue("666548430");
         await autopolicypages.rolesTab.click();
+        await t.wait(2000);
         await autopolicypages.yearFirstLicensed.setValue("2000");
         await autopolicypages.accidentsPolicy.selectOptionByValue("0");
         await autopolicypages.accidentsAccount.selectOptionByValue("0");
@@ -33,7 +34,7 @@ export class AutoPolicyScenario{
         await autopolicypages.costNew.setValue("5000");
         await autopolicypages.primaryUse.selectOptionByLabel("Business");
         await autopolicypages.addDriverButton.click();
-        await autopolicypages.addDriverOnVehicle("Don Dominic Campilla");
+        await autopolicypages.addDriverOnVehicle("Elina Snow");
         await autopolicypages.nextButton.click();
         await t.wait(1000);
         await autopolicypages.nextButton.click();

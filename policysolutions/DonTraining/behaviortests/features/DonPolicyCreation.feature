@@ -1,12 +1,12 @@
 Feature: Policy Creation
 
 Background: 
-    Given a Personal Accounts
+    Given I create a Personal Account
 
   
 @donAutoPolicy
 Scenario: PA Policy Creation
-    Given I create a Personal Auto Policy
+    When I create a Personal Auto Policy
 
 @donHomePolicy
 Scenario: HO Policy Creation

@@ -2,6 +2,6 @@ import{InlandMarinePolicyScenario} from "../../../DonTraining/scenarios/InlandMa
 const { Given, When, Then } = require("@cucumber/cucumber");
 const inlandmarinepolicyScenario = new InlandMarinePolicyScenario();
 
-Given(/^I create a Personal InlandMarine Policy$/, async function() {
+When(/^I create a Personal InlandMarine Policy$/, async function() {
     await inlandmarinepolicyScenario.createInlandMarinePolicy();
 });
