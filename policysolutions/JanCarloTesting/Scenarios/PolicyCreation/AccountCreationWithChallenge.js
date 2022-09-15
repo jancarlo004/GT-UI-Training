@@ -61,9 +61,24 @@ export class AccountCreationWithChallenge{
         await t.click(accounttabBar.searchAccount.component.find('div.gw-ContentInputWidget[id$=-searchBtns]').find('div.gw-LinkWidget[id$=-Search]'));
     }
 
-    async selectInputFieldForCreateAccount(selectInputName, selectInputOptionValue){
-        let dropdownElements = accounttabBar.createAccount.component.find('.gw-label').withExactText(selectInputName).sibling('div').find('select');
-        await t.click(dropdownElements);
-        await t.click(dropdownElements.find('option').withText(selectInputOptionValue));
-    }
+// <<<<<<< HEAD
+//     async City(city, value){
+//         await t.typeText(accountTab.createAccount.component.find('.gw-label').withExactText(city).sibling('div').find('input'), value);
+//     }
+
+//     async State(state, value){
+//         let dropdownElement = await t.click(accountTab.createAccount.component.find('.gw-label').withExactText(state).sibling('div').find('select'));
+//         await t.click(dropdownElement);
+//         await t.click(dropdownElement.find('option').withText(value));
+        
+    
+//     }   
+    
+// =======
+//     async selectInputFieldForCreateAccount(selectInputName, selectInputOptionValue){
+//         let dropdownElements = accounttabBar.createAccount.component.find('.gw-label').withExactText(selectInputName).sibling('div').find('select');
+//         await t.click(dropdownElements);
+//         await t.click(dropdownElements.find('option').withText(selectInputOptionValue));
+//     }
+// >>>>>>> 857b05d5ced8a75cb887545183f4eb1a5e1a64fc
 }
