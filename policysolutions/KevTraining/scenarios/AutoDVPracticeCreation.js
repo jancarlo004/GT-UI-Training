@@ -22,18 +22,14 @@ export class AutoDVPracticeCreation {
         // if (await autoDVPracticePages.driversScreen.component.find('.gw-label').withText(" ")) {
         //     await this.setValueForTextFieldDrivers("Mobile Phone: Phone Number", "4509646");
         // }
-        if (world.driverType == "Existing Driver") {
-            await this.setValueForTextFieldDrivers("Mobile Phone: Phone Number", "4509646");
-        } else {
-            await this.setValueForTextFieldDrivers("Mobile Phone", "4509646");
-        }
+        await this.setExistingDriversTextField_Dan("Mobile Phone", "4509646");
         await t.pressKey("tab");
-        await this.setValueForTextFieldDrivers("License #", "666618699");
+        await this.setExistingDriversTextField_Dan("License #", "666618699");
         await t.pressKey("tab");
         await this.setValueForDropDown("License State", "Arizona");
         await t.wait(2000);
         await this.clickRolesTab("Roles");
-        await this.setValueForTextFieldDrivers("Year First Licensed", "2012");
+        await this.setExistingDriversTextField_Dan("Year First Licensed", "2012");
         await this.setValueForAccidentsAndViolations("1");
         await this.driversNextButton("Next");
         await this.createVehicleButton("Create Vehicle");
@@ -95,24 +91,24 @@ export class AutoDVPracticeCreation {
         await t.click(clickInsured);
     }
 
-    async setValueForTextFieldDrivers(fieldName, value) {
-        // await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
-        // if (await (await autoDVPracticePages.driversScreen.component.)){
-            // await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
-        // }
-        if (await autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input').withExactText("") == true) {
-            await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
-        }
-    }
-    // dan
-    // async setExistingDriversTextField_Dan(fieldName, value) {
-    //     while(await autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input').innerText == null) {
+    // async setValueForTextFieldDrivers(fieldName, value) {
+    //     // await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
+    //     // if (await (await autoDVPracticePages.driversScreen.component.)){
+    //         // await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
+    //     // }
+    //     if (await autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input').withExactText("") == true) {
     //         await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
     //     }
     // }
+    // dan
+    async setExistingDriversTextField_Dan(fieldName, value) {
+        while(await autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input').innerText == null) {
+            await t.typeText(autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(fieldName).sibling('div').find('input'), value);
+        }
+    }
 
     async setValueForDropDown(labelName, value){
-        let dropDown = autoDVPracticePages.driversScreen.component.find('.gw-label').withExactText(labelName).sibling('div').find('select');
+        let dropDown = autoDVPracticePages.driversScreen.component.find('.gw-label').withAttribute(labelName).sibling('div').find('select');
         await t.click(dropDown);
         await t.click(dropDown.find('option').withText(value));
       }

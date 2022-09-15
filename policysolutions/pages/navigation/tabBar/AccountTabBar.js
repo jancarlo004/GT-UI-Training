@@ -1,4 +1,4 @@
-import { PcfComponent } from '@gtui/gt-ui-framework';
+import { PcfButton, PcfComponent } from '@gtui/gt-ui-framework';
 
 export class AccountTabBar {
 	accountTabAccountTab_AccountNumberSearchItem = PcfComponent('#TabBar-AccountTab-AccountTab_AccountNumberSearchItem');
@@ -7,5 +7,6 @@ export class AccountTabBar {
 	tabBarWidgetmoreoptions = PcfComponent('#TabBarWidget--more-options');
 
 	createAccount = PcfComponent("#CreateAccount-CreateAccountScreen-CreateAccountDV");
-	searchAccount = PcfComponent("#NewAccount-NewAccountScreen-NewAccountSearchDV");
+	searchAccount = PcfComponent("#NewAccount-NewAccountScreen");
+	updateButton = PcfButton("#CreateAccount-CreateAccountScreen-Update");
 }

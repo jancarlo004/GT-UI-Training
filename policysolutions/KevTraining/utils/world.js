@@ -10,6 +10,7 @@ module.exports = {
     accountNumber: "",
     vehicleVin: "WDDHF8JB3CA549096",
     policyNumber: "",
+    claimNumber: "",
     effectiveDate: "",
     drivers: [],
     driverFirstName: ['Jancarlo', 'Dominic','Clov'],

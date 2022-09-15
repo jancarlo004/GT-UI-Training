@@ -81,7 +81,6 @@ export class HomePolicyCreation{
         let policyResult = await kevPages.policyBound.component.innerText;
         console.log("result " + policyResult);
         await t.expect(policyResult).contains(policyBound);
-       
     }
 
 }

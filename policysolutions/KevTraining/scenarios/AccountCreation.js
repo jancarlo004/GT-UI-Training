@@ -13,8 +13,8 @@ export class AccountCreation{
         await kevPages.accountTab.click();
         await t.click(kevPages.accountTab.component.find('div.gw-action--expand-button'));
         await kevPages.newAccount.click();
-        await kevPages.firstName.setValue("Kevz");
-        await kevPages.lastName.setValue("Cortez");
+        await kevPages.firstName.setValue("Champagne");
+        await kevPages.lastName.setValue("Papi");
         await kevPages.searchButton.click();
         if(await autoPolicyPages.searchResultLV.rowCount() == 0){
             await kevPages.createNewAccountButton.click();
@@ -24,7 +24,7 @@ export class AccountCreation{
             await t.pressKey('tab');
             await kevPages.state.selectOptionByLabel("Arizona");
             await kevPages.addressType.selectOptionByLabel("Home");
-            await kevPages.organization.setValue("Enigma");
+            await kevPages.organization.setValue("Enigma Fire & Casualty");
             await t.pressKey('tab');
             await t.wait(1000);
             await kevPages.producerCode.selectOptionByLabel("INT-4 Internal Producer Code - 4");

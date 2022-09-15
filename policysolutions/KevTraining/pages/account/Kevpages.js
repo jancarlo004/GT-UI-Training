@@ -30,12 +30,20 @@ offeringScreen = PcfSelectInput('#offeringSelection = PcfSelectInput("#Submissio
 // New Submission Home Policy
     actions = PcfComponent('#AccountFile-AccountFileMenuActions');
     newSubmission = PcfButton('#AccountFile-AccountFileMenuActions-AccountFileMenuActions_Create-AccountFileMenuActions_NewSubmission');
-    newSubmissionLV = PcfListView('#NewSubmission-NewSubmissionScreen-ProductOffersDV-ProductSelectionLV');
+    newSubmissionLV = PcfComponent('#NewSubmission-NewSubmissionScreen-ProductOffersDV-ProductSelectionLV');
     policyType = PcfSelectInput('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-CoveragePartSelectionDV-HOPCoveragePartType');
     coverageForm = PcfSelectInput('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-CoveragePartSelectionDV-HOPCoverageForm');
     whoOccupiesThisDwelling = PcfSelectInput('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-PreQualQuestionSetsDV-QuestionSetsDV-0-QuestionSetLV-2-QuestionModalInput-ChoiceSelectInput');
     radioButtonYes = PcfButton ('#SubmissionWizard-SubmissionWizard_PreQualificationScreen-PreQualQuestionSetsDV-QuestionSetsDV-0-QuestionSetLV-3-QuestionModalInput-BooleanRadioInput_0');
     submissionNext = PcfButton('#SubmissionWizard-Next');
+
+// Select LOB method
+    async selectLOB(lob){
+        let lobListView = this.newSubmissionLV.component.find('td[id$=-Name_Cell]').withExactText(lob);
+        let selectButton = lobListView.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-addSubmission]');
+        await t.click(selectButton);
+    }
+
     
 // Dwelling screen
     swimmingPoolCheckBox = PcfCheckBox('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-HOPDwellingScreen-HOPDwellingPanelSet-HOPDwellingCV-HOPDwellingDetailsDV-HOPSwimmingPoolInputSet-SwimmingPool');

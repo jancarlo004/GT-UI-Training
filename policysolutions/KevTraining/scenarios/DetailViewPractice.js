@@ -16,8 +16,8 @@ export class DetailViewPractice {
     await kevPages.accountTab.click();
     await t.click(kevPages.accountTab.component.find('div.gw-action--expand-button'));
     await kevPages.newAccount.click();
-    await this.setValueForTextField("First name", "Danilor");
-    await this.setValueForTextField("Last name", "Cruz");
+    await this.setValueForTextField("First name", "Hiei");
+    await this.setValueForTextField("Last name", "Zoldyck");
     await this.setValueForDropDown("Country", "United States");
     await this.setValueForTextField("ZIP Code", "85083");
     await this.setValueForTextField("City", "Arizona");

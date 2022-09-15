@@ -14,6 +14,10 @@ Scenario: Creating an  InLand Marine policy in PC
     When I create an In Land Marine claim
     Then In Land Marine Claim is created
 
+@workersCompensationPolicy
+Scenario: Creating a Workers Compensation policy in PC
+    When I create Workers Compensation in PC
+    Then Verify if the workers compensation policy is binded in PC
 
     
     

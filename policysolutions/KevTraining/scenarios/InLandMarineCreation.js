@@ -69,7 +69,6 @@ export class InLandMarineCreation {
         await kevPages.claimNextButton.click();
         await kevPages.claimFinishButton.click();
         await t.wait(3000);
-
     }
 
     async verifyInlandMarineClaimIsCreated(){

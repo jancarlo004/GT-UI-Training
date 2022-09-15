@@ -32,6 +32,8 @@ export class DriversAndVehiclesPages {
     okButton = PcfButton('#NewPolicyDriverPopup-ContactDetailScreen-Update');
     addMVRLV = PcfListView('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV');
     retrieveMVRButton = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriversLV_tb-RetrieveMVRButton');
+    dobTextField = PcfTextInput('#NewPolicyDriverPopup-ContactDetailScreen-NewPolicyContactRoleDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-DateOfBirth');
+    dobExistingDriver = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PADriversScreen-PADriversPanelSet-DriversListDetailPanel-DriverDetailsCV-PolicyContactDetailsDV-PolicyContactRoleNameInputSet-DateOfBirth');
 
     // Vehicle Details
     createVehicleButton = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel_tb-Add');
@@ -43,10 +45,13 @@ export class DriversAndVehiclesPages {
     licensePlate = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-LicensePlate_DV');
     assignDriverToVehicle = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver');
 
+
+
 async clickExistingDriver (){
     let existingDriver = this.addDriverButton.component.find('.gw-subMenu').find('.gw-label').withText(world.accountName);
     await t.click(this.addDriverButton.component).hover(this.existingDriverButton.component).click(existingDriver);
     await t.wait(2000);
+    await this.dobExistingDriver.setValue("01/01/1970");
     await this.licenseNumber.setValue("666618699");
     await this.licenseState.selectOptionByLabel("Arizona");
     await this.rolesTab.click();
@@ -56,8 +61,6 @@ async clickExistingDriver (){
     await this.numOfAccidents2.selectOptionByLabel("0");
     await this.numOfViolations2.selectOptionByLabel("0");
     await this.addMVR();
-
-
 }
 
 async addNewDriver(){
@@ -66,6 +69,7 @@ async addNewDriver(){
         await this.newPersonButton.click();
         await this.newDriverFirstName.setValue(world.driverFirstName[i]);
         await this.newDriverLastName.setValue(world.driverLastName[i]);
+        await this.dobTextField.setValue(world.dateOfBirth[i]);
         await this.newDriverAddress1.setValue(world.addressLine[i]);
         await this.newDriverState.selectOptionByLabel(world.state[i]);
         await this.newDriverAddressType.selectOptionByLabel(world.addressType[i]);
@@ -80,9 +84,8 @@ async addNewDriver(){
         await this.newNumOfViolations2.selectOptionByLabel(world.numberOfViolationsAccountLevel[i]);
         await this.addMVR();
         await this.storeDriverName();
-
     }
-}
+ }
 
 async addMVR(){
     await this.addMVRLV.clickOnCell(-1,0);

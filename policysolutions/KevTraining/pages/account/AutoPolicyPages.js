@@ -57,4 +57,32 @@ export class AutoPolicyPages {
     // Assign Driver to Vehicle
     assignDriverToVehicle = PcfComponent('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-PAVehiclesScreen-PAVehiclesPanelSet-VehiclesListDetailPanel-VehiclesDetailsCV-PersonalAuto_VehicleDV-PersonalAuto_AssignDriversInputSet-DriverPctLV_tb-AddDriver');
     
+    // Risk Analysis
+    uwOkButton = PcfButton('#RiskApprovalDetailsPopup-Update');
+    riskAnalysisActions = PcfComponent('#SubmissionWizard-RiskAnalysis');
+    uwApproveButton = PcfComponent('#SubmissionWizard-Job_RiskAnalysisScreen-RiskAnalysisCV-RiskEvaluationPanelSet-1-UWIssueRowSet-Approve');
+        async approveButtonUW() {
+            await t.click(this.riskAnalysisActions.component);
+            while(await this.uwApproveButton.component.visible){
+                await t.click(this.uwApproveButton.component);
+                await this.uwOkButton.click();
+            }
+        }
+    bindButtonRiskAnalysis = PcfComponent('#SubmissionWizard-Job_RiskAnalysisScreen-JobWizardToolbarButtonSet-BindOptions');
+    issuePolicyButton = PcfComponent('#SubmissionWizard-Job_RiskAnalysisScreen-JobWizardToolbarButtonSet-BindOptions-BindAndIssue');
+        async clickIssuePolicy(){
+            await t.click(this.bindButtonRiskAnalysis.component).click(this.issuePolicyButton.component);
+
+        }
+    
+    //Quote screen
+    quoteButton = PcfButton('#SubmissionWizard-SubmissionWizard_PolicyReviewScreen-JobWizardToolbarButtonSet-QuoteTypeToolbarButtonSet-Quote');
+    bindButton = PcfComponent('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions');
+    bindOnly = PcfComponent('#SubmissionWizard-SubmissionWizard_QuoteScreen-JobWizardToolbarButtonSet-BindOptions-BindOnly');
+        async clickBindOnly() {
+            await t.click(this.bindButton.component).click(this.bindOnly.component);
+        }
+    //Bound
+    submissionBoundInnerText = PcfComponent('#JobComplete-JobCompleteScreen-ttlBar');
+    policyNumber = PcfComponent('#JobComplete-JobWizardInfoBar-PolicyNumber');
 }
