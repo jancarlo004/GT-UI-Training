@@ -1,7 +1,7 @@
 module.exports = {
     contact: {
-        firstName: "",
-        lastName: "",
+        firstName: "Don",
+        lastName: "Campilla",
         name: "",
         taxID: ""
     },
