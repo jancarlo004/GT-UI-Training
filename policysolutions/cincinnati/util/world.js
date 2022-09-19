@@ -9,7 +9,8 @@ module.exports = {
             firstName: '',
             lastName: '',
             homePhone: '2014785236',
-            birthDate: ''
+            birthDate: '',
+            ssn: ''
            
         },
 
@@ -20,7 +21,8 @@ module.exports = {
             county: 'Tarrant',
             state: 'TX',
             stateFull: 'Texas',
-            zipCode: '76039'
+            zipCode: '76039',
+            AddressType: 'Home'
 
         }
 
@@ -67,6 +69,28 @@ module.exports = {
 
         pastDate: '',
         currentDate: ''
+
+    },
+
+    CompanyInsuredInfo: {
+
+        CompanyInfo: {
+
+            companyName:''
+
+        },
+
+        AddressInfo: {
+
+            streetAddress: '3262 Pickens Way',
+            city: 'Euless',
+            county: 'Tarrant',
+            state: 'TX',
+            stateFull: 'Texas',
+            zipCode: '76039',
+            AddressType: 'Home'
+
+        }
 
     }
 
