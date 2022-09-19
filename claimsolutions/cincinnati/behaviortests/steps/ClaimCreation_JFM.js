@@ -13,5 +13,8 @@ Given(/^I am a user with Adjuster Role$/, async function(){
 
 When(/^I submit a first notice of loss for Workers Compensation$/, async function(){
     await wcClaimCreationFNOL.claimCreationFNOL();
-    
+});
+
+Then(/^Claim is created$/, async function(){
+    await wcClaimCreationFNOL.verifyClaim();
 });

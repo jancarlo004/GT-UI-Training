@@ -4,7 +4,6 @@ import { ClaimTabBar } from "../../pages/navigation/tabBar/ClaimTabBar";
 import { NewContactPopup } from "../../pages/popup/New/NewContactPopup";
 import { t } from "testcafe";
 import world from "../utils/world";
-import { concat } from "lodash";
 
 const fNOLWizard = new FNOLWizard();
 const claimTabBar = new ClaimTabBar();
@@ -17,7 +16,7 @@ export class WCClaimCreationFNOLPages_JFM{
     searchOrCreatePolicyLossDateButton = PcfButton('#FNOLWizard-FNOLWizard_FindPolicyScreen-FNOLWizardFindPolicyPanelSet-Claim_LossDate_dateIcon');
     optionsReportedBy = PcfButton('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-ReportedBy_Name-ReportedBy_NameMenuIcon');
     optionsInjuredWorkerName = PcfComponent('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-Claimant_Name');
-
+    newClaimSaved = PcfComponent('#NewClaimSaved-NewClaimSavedScreen');
 
     async newClaim(){
         await t.click(this.claimsTab.component.find('div.gw-action--expand-button'));
@@ -46,13 +45,4 @@ export class WCClaimCreationFNOLPages_JFM{
         await t.click(this.optionsInjuredWorkerName.component.find('div.gw-select-wrapper'));
         await t.click(injuredWorkerDropdown.find('option').withText(injuredWorker));
     }
-
-    
-
-
-    // async selectExistingPolicy(){
-    //     let searchedPolicy = fNOLWizard.fNOLWizardFindPolicyPanelSetPolicyResultLV.component.find('td[id$=-PolicyNumber_Cell').withExactText(world.policyNumber);
-    //     let selectButton = searchedPolicy.sibling('td[id$=-Select]').find('div.gw-LinkWidget[id$=-selectButton]');
-    //     await t.click(selectButton);
-    //}
 }
