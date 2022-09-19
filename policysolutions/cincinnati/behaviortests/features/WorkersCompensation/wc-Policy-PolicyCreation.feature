@@ -6,4 +6,4 @@ Feature: Creation of Personal Account and Workers Compensation Policy Creatiom
         Given Login to PolicyCenter as a Producer
         When Create a Personal Account
         When Create a Workers Compensation Policy
-        # Then Successfully create the Workers Compensation Policy
+        Then Successfully create the Workers Compensation Policy
