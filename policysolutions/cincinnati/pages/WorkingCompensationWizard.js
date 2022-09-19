@@ -1,4 +1,4 @@
-import { PcfButton, PcfListView, PcfSelectInput, PcfTextInput } from "@gtui/gt-ui-framework";
+import { PcfButton, PcfListView, PcfSelectInput, PcfTextInput, PcfDateValueInput } from "@gtui/gt-ui-framework";
 
 
 export class WorkersCompensationWizard{
@@ -13,6 +13,12 @@ export class WorkersCompensationWizard{
     flLocation = PcfSelectInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-CoverageOptionsScreen-WCOptionsPanelSet-WCOptionCardPanelSet-WCFederalLiabilityInputSet-WCLine_WCCovEmpLV-0-Loc');
     flClassCodeSearch = PcfButton('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-CoverageOptionsScreen-WCOptionsPanelSet-WCOptionCardPanelSet-WCFederalLiabilityInputSet-WCLine_WCCovEmpLV-0-ClassCode-SelectClassCode');
     flBasis = PcfTextInput('#SubmissionWizard-LOBWizardStepGroup-LineWizardStepSet-CoverageOptionsScreen-WCOptionsPanelSet-WCOptionCardPanelSet-WCFederalLiabilityInputSet-WCLine_WCCovEmpLV-0-AnnualRenum');
+
+    reportedName = PcfSelectInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-ReportedBy_Name');
+
+    injuredWorkerNameMenuIcon = PcfButton('#FNOLWizard-FullWizardStepSet-FNOLWizard_BasicInfoScreen-Claimant_Name-Claimant_NameMenuIcon');
+
+    dateEmployerNotified = PcfDateValueInput('#FNOLWizard-FullWizardStepSet-FNOLWizard_NewLossDetailsScreen-DateReportedtoEmployer_Input');
 
 
 }
