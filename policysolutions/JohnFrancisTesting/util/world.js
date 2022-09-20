@@ -1,7 +1,7 @@
 module.exports = {
     account: {
         accountNo: "8922633215",
-        firstName: ['Jeric', 'Williams', 'Nicole'],
+        firstName: ['Francis', 'Williams', 'Nicole'],
         lastName: ['Joji', 'Fred', 'James'],
         fullName: "",
         taxID: "",
@@ -13,7 +13,8 @@ module.exports = {
         organization: "Enigma",
         birthDate: ['08/18/1994', '09/16/1994', '12/23/1994'],
         mobileNumber: "9016540987",
-        primaryEmailAddress: "jmagalla@test.me"
+        primaryEmailAddress: "jmagalla@test.me",
+        producer: "Enigma Fire & Casualty"
     },
 
     personalAutoSubmission:{

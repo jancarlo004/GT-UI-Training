@@ -26,14 +26,25 @@ export class AccountScenario{
         await newAccount_Personal.postalCode.setValue(world.account.zipCode);
         await t.pressKey('tab');
         await newAccount_Personal.addressType.selectOptionByValue("home");
-        await newAccount_Personal.organization.setValue("Enigma Fire & Casualty");
+        await this.selectOrganization("Enigma Fire & Casualty");
         await t.pressKey('tab');
         await newAccount_Personal.producerCode.selectNthOption(1);
         await newAccount_Personal.createButton.click();
     }
-    // async searchExistingAccount(){
-    //     await t.click(accountTabBar.tabBarAccountTab.component.find('div.gw-action--expand-button'));
-    //     await accountTabBar.accountTabAccountTab_AccountNumberSearchItem.setValue(world.account.accountNo);
-    //     await t.pressKey('enter');
-    // }
+
+    async searchExistingAccount(){
+        await t.click(accountTabBar.tabBarAccountTab.component.find('div.gw-action--expand-button'));
+        await accountTabBar.accountTabAccountTab_AccountNumberSearchItem.setValue(world.account.accountNo);
+        await t.pressKey('enter');
+    }
+
+    async selectOrganization(organizationName){
+        let mainComponent = accountTabBar.tabBarAccountTab.component.parent('div').sibling('div');
+        let searchedOrganization = mainComponent.find('div[id$=-OrganizationSearchResultsLV]').find('td[id$=-Name_Cell]');
+        let selectButton = searchedOrganization.sibling('td').withText('Select');
+        await t.click(mainComponent.find('[id$=-ProducerSelectionInputSet-Producer-SelectOrganization]'));
+        await t.typeText(mainComponent.find('[id$=-OrganizationSearchDV-GlobalContactNameInputSet-Name]').find('input'), organizationName);
+        await t.click(mainComponent.find('[id$=-SearchAndResetInputSet-SearchLinksInputSet-Search]'));
+        await t.click(selectButton);
+    }
 }
