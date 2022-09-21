@@ -82,7 +82,7 @@ export class WCCreationScenario extends SubmissionScenario{
 
         await this.issuePolicy();
 
-        world.InsuranceInfo.PolicyInfo.PersonalAuto.policyNumber = await this.policyTabBarParent.find('div[id$="-PolicyNumber"]').find('.gw-infoValue').innerText;// Getting the Policy Number
+        world.InsuranceInfo.policyNumber = await this.policyTabBarParent.find('div[id$="-PolicyNumber"]').find('.gw-infoValue').innerText;// Getting the Policy Number
 
     }
 

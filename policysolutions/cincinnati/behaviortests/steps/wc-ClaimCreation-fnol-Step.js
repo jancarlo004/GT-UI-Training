@@ -7,7 +7,7 @@ const wcClaimScenario = new WCClaimScenario();
 
 Given(/^Login on ClaimCenter as adjuster$/, async function(){
 
-    await onCCApp.loginWithUser('rbarnes', 'gw');
+    await onCCApp.loginWithUser('ssmith', 'gw');
 
 });
 

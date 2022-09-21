@@ -53,7 +53,7 @@ export class WCClaimScenario{
         await fnolWizard.fNOLWizardNext.click(); //Next button
         await fnolWizard.fNOLWizardFinish.click();
 
-        await t.debug();
+       
 
     }
 
@@ -63,6 +63,9 @@ export class WCClaimScenario{
         let verifyThisWord = await claimTabBar.tabBarClaimTab.component.parent().sibling().find('div[id$="-ttlBar"]').find('.gw-TitleBar--title').innerText;
 
         await t.expect(verifiedWords).contains(verifyThisWord, 'Unsuccessfully Claim Transactsion');
+
+        // await t.pressKey('alt+v');
+        await t.debug();
      
     }
 

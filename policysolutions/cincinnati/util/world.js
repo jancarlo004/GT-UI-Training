@@ -55,6 +55,12 @@ module.exports = {
 
             }
 
+        },
+
+        ClaimInfo: {
+
+            claimNumber: ''
+
         }
 
     },
