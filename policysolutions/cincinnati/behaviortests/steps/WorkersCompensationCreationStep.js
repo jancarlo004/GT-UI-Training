@@ -1,5 +1,4 @@
-import { Given, Then, When } from "@cucumber/cucumber";
-import { t } from "testcafe";
+import { Given, When } from "@cucumber/cucumber";
 import { AccountCreationScenario } from "../../scenarios/AccountScenarios/AccountCreationScenario";
 import { WCCreationScenario } from "../../scenarios/PolicyScenarios/WCCreationScenario";
 
@@ -8,20 +7,19 @@ const wcCreationScenario = new WCCreationScenario();
 
 Given(/^Created Personal Account$/, async function(){
 
-    console.log('Creating a New Personal Account');
     await accountCreationScenario.createPersonalAccount();
 
 });
 
-When(/^Create a Workers Compensation Policy$/, async function(){
+When(/^Create policy for Workers Compensation$/, async function(){
 
     await wcCreationScenario.createWorkersCompensationPolicy();
 
 });
 
-Then(/^Successfully create the Workers Compensation Policy$/, async function(){
+When(/^Successfully create a Workers Compensation Policy$/, async function(){
 
     await wcCreationScenario.verifyIssuePolicy();
-    
 
 });
+

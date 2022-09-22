@@ -1,6 +1,6 @@
 Feature: Adding Notes
 
-@claimSearch @TEST_CIC_10023
+@claimSearch @TEST_CIC_10023 @AddNotes
 Scenario Outline: Adding Notes
     Given a workers compensation Claim
     When I add <notes>

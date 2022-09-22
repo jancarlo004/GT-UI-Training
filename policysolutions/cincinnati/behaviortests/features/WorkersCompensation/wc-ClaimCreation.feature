@@ -1,14 +1,12 @@
-@WCClaimCreation
-
-Feature: Claim Creation
+Feature: Workers Compensation Claim Creation
 
 Background: 
-    Given Login to PolicyCenter as a Producer
-    Given Created Personal Account
-    When Create a Workers Compensation Policy
+    Given Login to PolicyCenter as a producer
+    And Created Personal Account
 
-    Scenario: Create a WC Claim
-        Given Login on ClaimCenter as adjuster
-        When create a Workers Compensation Claim
-        Then Successfully file a claim
-  
+@WCClaimCreation
+
+    Scenario: Filing a claim for Workers Compensation LOB
+        Given Create policy for Workers Compensation
+        When File a Claim for a Workers Compensation Policy
+        Then Successfully file a Workers Compensation Policy

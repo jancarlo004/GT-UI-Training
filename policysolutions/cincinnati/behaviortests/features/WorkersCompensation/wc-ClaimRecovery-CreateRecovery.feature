@@ -1,6 +1,6 @@
 Feature: Create a Recovery on a WC Claim
 
-@WCClaimCreation
+@WCClaimRecoveryCreation
 
     Scenario: Creating Recovery in a Claim
         Given a Workers Compensation Claim

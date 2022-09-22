@@ -1,11 +1,11 @@
-@WorkersCompensationPolicy 
-
-Feature: Creation of Workers Compensation Policy
+Feature: Create Workers Compensation Policy
 
 Background: 
-    Given Login to PolicyCenter as a Producer
+    Given Login to PolicyCenter as a producer
+
+@CreateWorkersCompensationPolicy
 
     Scenario: Creating Workers Compensation Policy
         Given Created Personal Account
-        When Create a Workers Compensation Policy
-        Then Successfully create the Workers Compensation Policy
+        When Create policy for Workers Compensation
+        Then Successfully create a Workers Compensation Policy
