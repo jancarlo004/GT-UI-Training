@@ -47,5 +47,6 @@ export class CreateClaimRecoveryScenario{
         console.log('Claim Recovery Successfully Created');
     }
 
+
 }
 
