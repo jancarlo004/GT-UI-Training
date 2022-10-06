@@ -72,7 +72,7 @@ export class WCClaimScenario{
 
         await fnolWizard.fNOLWizardNext.click(); //Next button
         await fnolWizard.fNOLWizardFinish.click();
-        await t.wait(3000);
+
 
 
     }

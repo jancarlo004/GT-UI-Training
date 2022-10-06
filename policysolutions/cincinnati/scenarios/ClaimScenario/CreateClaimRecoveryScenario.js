@@ -3,6 +3,7 @@ import { t } from "testcafe";
 import { NewRecoverySet } from "../../../../claimsolutions/pages/other/NewRecoverySet";
 import { ClaimMenuActions } from "../../../../ignite/previousGeneratedOutput/classFiles/claimsolutions/pages/navigation/menuActions/ClaimMenuActions";
 import { ClaimTabBar } from "../../../../ignite/previousGeneratedOutput/classFiles/claimsolutions/pages/navigation/tabBar/ClaimTabBar";
+import world from "../../util/world";
 
 const claimMenuActions = new ClaimMenuActions();
 const newRecoverySet = new NewRecoverySet();
@@ -18,7 +19,7 @@ export class CreateClaimRecoveryScenario{
         await claimMenuActions.claimMenuActions_NewOtherTransClaimMenuActions_NewTransaction_RecoverySet.click();
 
         let payer = this.claimTabBarParent.find('div[id$="-Payer_Input"]').withText('Payer');
-        await PcfSelectInput(payer.find('div[id$="-Payer"]')).selectOptionByLabel('QIwKvovzgg vJtWlgDuAD');
+        await PcfSelectInput(payer.find('div[id$="-Payer"]')).selectOptionByLabel(world.PrimaryInsuredInformation.PersonalInfo.fullName);
         
         await newRecoverySet.newRecoverySetNewRecoveryScreenRecoveryDetailDVReserveLineInputSetReserveLine.selectOptionByLabel('New...');
         await newRecoverySet.newRecoverySetNewRecoveryScreenRecoveryDetailDVReserveLineInputSetExposure.selectOptionByLabel('(1) Medical Details');

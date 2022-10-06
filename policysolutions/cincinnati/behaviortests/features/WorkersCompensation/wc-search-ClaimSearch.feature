@@ -4,6 +4,6 @@ Feature: Claim Search
 Scenario Outline: Search for a Contact
     Given a workers compensation Claim
     When I search for contact
-    # Then claim is retrieved
+    Then claim is retrieved
   
   
