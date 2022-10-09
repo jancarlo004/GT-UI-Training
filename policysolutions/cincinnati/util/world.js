@@ -5,9 +5,9 @@ module.exports = {
 
         PersonalInfo: {
 
-            fullName: 'xIoEmDnscr OReSPelTKe',
-            firstName: '',
-            lastName: '',
+            fullName: 'AxPLrddBla eNfejynCLb',
+            firstName: 'AxPLrddBla',
+            lastName: 'eNfejynCLb',
             homePhone: '2014785236',
             birthDate: '',
             ssn: ''
@@ -31,7 +31,7 @@ module.exports = {
     InsuranceInfo: {
 
         accountNumber: '',
-        policyNumber: '7817545724',
+        policyNumber: '',
 
         PolicyInfo: {
 

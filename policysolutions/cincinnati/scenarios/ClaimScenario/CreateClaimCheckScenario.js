@@ -3,6 +3,7 @@ import { PcfButton } from "@gtui/gt-ui-framework/bin/pebbles-ui/components/PcfBu
 import { t } from "testcafe";
 import { ClaimMenuActions } from "../../../../ignite/previousGeneratedOutput/classFiles/claimsolutions/pages/navigation/menuActions/ClaimMenuActions";
 import { ClaimTabBar } from "../../../../ignite/previousGeneratedOutput/classFiles/claimsolutions/pages/navigation/tabBar/ClaimTabBar";
+import world from "../../util/world";
 
 const claimMenuActions = new ClaimMenuActions();
 const claimTabBar = new ClaimTabBar();
@@ -18,7 +19,7 @@ export class CreateClaimCheckScenario{
 
         //Step 1 of 3: Enter Payee Information
         let primaryPayeeName = this.claimTabParent.find('div[id$="-PrimaryPayee_Name_Input"]').withText('Name');
-        await PcfSelectInput(primaryPayeeName.find('div[id$="-PrimaryPayee_Name"]')).selectOptionByLabel('gQSKUShhWh kawQVZfpQE');
+        await PcfSelectInput(primaryPayeeName.find('div[id$="-PrimaryPayee_Name"]')).selectOptionByLabel(world.PrimaryInsuredInformation.PersonalInfo.fullName);
 
         await PcfButton(this.claimTabParent.find('div[id$="-Next"]')).click();// Next Button
 
@@ -28,7 +29,7 @@ export class CreateClaimCheckScenario{
         await PcfSelectInput(reserveLine.find('div[id$="-ReserveLine"]')).selectOptionByLabel('New...');
 
         let exposure = this.claimTabParent.find('div[id$="-Exposure_Input"]').withText('Exposure');
-        await PcfSelectInput(exposure.find('div[id$="-Exposure"]')).selectOptionByLabel('(1) Medical Details');
+        await PcfSelectInput(exposure.find('div[id$="-Exposure"]')).selectOptionByLabel('(2) Indemnity');
 
         let costType = this.claimTabParent.find('div[id$="-CostType_Input"]').withText('Cost Type');
         await PcfSelectInput(costType.find('div[id$="-CostType"]')).selectOptionByLabel('Claim Cost');

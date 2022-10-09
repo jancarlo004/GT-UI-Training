@@ -95,7 +95,7 @@ export class WCClaimScenario{
         let claimNumber = await claimTabBar.tabBarClaimTab.component.find('.gw-label').innerText; 
         let characterElements = '0123456789';
         let generatedClaimNumber = '';
-
+        console.log(claimNumber);
       
             
         claimNumber.split("").forEach(claimElements => {

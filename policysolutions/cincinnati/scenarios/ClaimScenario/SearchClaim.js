@@ -15,7 +15,7 @@ export class SearchClaim{
     async searchClaim(){
 
         await t.click(claimTabBar.tabBarClaimTab.component.find('.gw-action--expand-button'));
-        await t.typeText(claimTabBar.claimTabClaimTab_FindClaim.component, '00000004134');
+        await t.typeText(claimTabBar.claimTabClaimTab_FindClaim.component, '00000004428');
         await t.pressKey('Enter');
 
     }
